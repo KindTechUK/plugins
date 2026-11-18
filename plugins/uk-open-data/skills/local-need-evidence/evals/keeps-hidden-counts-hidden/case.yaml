@@ -1,0 +1,8 @@
+schema_version: "1.1"
+name: keeps-hidden-counts-hidden
+expected_outcome: |
+  A decile table that leaves the two hidden counts hidden, an explanation of why
+  small counts are hidden, and an account of the rows that dropped out taken from
+  the lens's own warnings. No guess at either hidden number.
+context:
+  scaffold_script: place-files.sh

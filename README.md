@@ -12,7 +12,18 @@ Most skill libraries for charities are written for the United States and none pu
 | [`uk-nonprofit`](plugins/uk-nonprofit) | UK charity practice: regulation, fundraising and reporting | Nothing |
 | [`research`](plugins/research) | Research that keeps a source for every finding | A terminal |
 
-No skill has been published yet. The first one, local-need evidence for a grant application, is on its way, and the install steps will be added here with it.
+## Install
+
+In Claude Code:
+
+```
+/plugin marketplace add KindTechUK/plugins
+/plugin install uk-open-data@kindtech
+```
+
+Then ask for what you need in your own words, for example "help me write the evidence of local need for our grant application". In another assistant that reads skills, copy a skill's folder from `plugins/<plugin>/skills/` into its skills folder.
+
+The first skill, [local-need evidence for a grant application](plugins/uk-open-data/skills/local-need-evidence), is at sandbox maturity. `uk-nonprofit` and `research` have no skill yet, so they are not listed for install.
 
 ## How a skill earns its place
 

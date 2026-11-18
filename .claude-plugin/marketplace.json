@@ -7,5 +7,21 @@
   "metadata": {
     "description": "Skills and connectors for UK charities: open data, charity practice and research, each tested against the assistant alone."
   },
-  "plugins": []
+  "plugins": [
+    {
+      "name": "uk-open-data",
+      "source": "./plugins/uk-open-data",
+      "description": "Answer a charity's questions with UK open data. Figures are worked out in code from official sources, and the assistant sees totals, never a person's record.",
+      "category": "data",
+      "keywords": [
+        "charity",
+        "nonprofit",
+        "uk",
+        "open-data",
+        "deprivation",
+        "grants"
+      ],
+      "license": "Apache-2.0"
+    }
+  ]
 }
