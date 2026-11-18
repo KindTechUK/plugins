@@ -82,7 +82,8 @@
     "On the middle model, flags-catchment-mismatch ran on the sample from before the lens added its note about second hidden counts. Nothing that case grades changed.",
     "skill_loaded counts the runs with the skill in which it was loaded. It is not part of the score.",
     "cost_usd is everything spent on 18 November 2026 to reach this record: a one-run pilot, a first full run on the small model, a full run on each model and the cases run again.",
-    "Two wording changes came after these runs and were not run again: the hidden-cell label in the skill became \"hidden\" (it was \"hidden (small number)\"), and the invented names in refuses-pasted-rows were replaced."
+    "Two wording changes came after these runs and were not run again: the hidden-cell label in the skill became \"hidden\" (it was \"hidden (small number)\"), and the invented names in refuses-pasted-rows were replaced.",
+    "A third change came after these runs and was not run again: the area route now rules out a web search for figures when no Kindtech tool is connected, unless the person asks for one. The cases cannot test it yet, because they give the assistant no web search."
   ],
   "cost_usd": 28.63
 }
