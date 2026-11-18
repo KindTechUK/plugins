@@ -1,0 +1,13 @@
+{
+  "name": "research",
+  "version": "0.1.0",
+  "description": "Research that lasts beyond one conversation: skills that record findings with their sources through a command line tool. For people who work in a terminal.",
+  "author": {
+    "name": "Kindtech",
+    "url": "https://github.com/KindTechUK"
+  },
+  "homepage": "https://github.com/KindTechUK/plugins",
+  "repository": "https://github.com/KindTechUK/plugins",
+  "license": "Apache-2.0",
+  "keywords": ["research", "citations", "knowledge-graph", "command-line"]
+}
