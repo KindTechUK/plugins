@@ -9,7 +9,8 @@
     "websiteURL": "https://kindte.ch",
     "defaultPrompt": [
       "Help me write the evidence of local need for a grant application",
-      "How deprived is the area our charity works in?"
+      "How deprived is the area our charity works in?",
+      "Do we reach people in the most deprived neighbourhoods? I have a list of client postcodes on my computer"
     ]
   }
 }
