@@ -25,7 +25,7 @@ target-version = "py311"
 select = ["E", "F", "I", "N", "UP", "B", "A", "C4", "SIM", "ERA"]
 
 [tool.ruff.lint.isort]
-known-first-party = ["lint_skills"]
+known-first-party = ["build_chatgpt_archive", "lint_skills"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

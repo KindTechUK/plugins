@@ -1,0 +1,15 @@
+{
+  "interface": {
+    "displayName": "Kindtech UK open data",
+    "shortDescription": "UK open data for charities",
+    "longDescription": "Answer a charity's questions with UK open data, starting with evidence of local need for a grant application. Figures are worked out in code from official sources such as the English Indices of Deprivation, and come back with their source, the working, and the things a person must check. The assistant is given totals only and never a record about one person.",
+    "developerName": "Kindtech",
+    "category": "Productivity",
+    "capabilities": ["Read"],
+    "websiteURL": "https://kindte.ch",
+    "defaultPrompt": [
+      "Help me write the evidence of local need for a grant application",
+      "How deprived is the area our charity works in?"
+    ]
+  }
+}

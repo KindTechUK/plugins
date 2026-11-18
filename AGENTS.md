@@ -21,6 +21,7 @@ plugins/
   uk-open-data/                   skills that use UK open data
   research/                       skills that call a research command line tool
     .claude-plugin/plugin.json    name, description, version
+    platforms/chatgpt.json        listing text for the ChatGPT build, optional
     skills/<skill-name>/
       SKILL.md
       references/                 dated facts with sources, one level deep
@@ -29,6 +30,7 @@ plugins/
 sandbox/<skill-name>/             drafts, not in any plugin
 templates/SKILL.md                start a new skill from this
 scripts/lint_skills.py            the house rules, as code
+scripts/build_chatgpt_archive.py  packages a plugin for ChatGPT
 tests/                            tests for the scripts
 ```
 
@@ -111,6 +113,17 @@ Add `--max-cost-usd 0` to check that the cases load without running anything. Re
 4. Write only as much skill as it takes to pass the cases. Start it in `sandbox/` if it is not ready.
 5. Run the cases with the skill, and keep going until it beats the assistant alone.
 6. Move the folder into the right plugin, add the plugin to `.claude-plugin/marketplace.json` if it is not listed yet, and open a pull request.
+
+## Building for another assistant
+
+The plugin folders are the one source. A build step writes each other assistant's package from them, so nothing is kept in two places.
+
+```bash
+uv run python scripts/build_chatgpt_archive.py uk-open-data
+uv run python scripts/build_chatgpt_archive.py uk-open-data --connector-url https://<host>/mcp
+```
+
+This writes `dist/uk-open-data-chatgpt-<version>.zip` in the portable [Agent Plugins](https://agent-plugins.org) layout: `plugin.json`, `skills/` without the eval folders, and `mcp.json` when a connector address is given. The listing text ChatGPT shows comes from `plugins/<plugin>/platforms/chatgpt.json`. `dist/` is not committed.
 
 ## Commits and pull requests
 
