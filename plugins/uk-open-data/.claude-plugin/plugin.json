@@ -1,0 +1,13 @@
+{
+  "name": "uk-open-data",
+  "version": "0.1.0",
+  "description": "Answer a charity's questions with UK open data. Figures are worked out in code from official sources, and the assistant sees totals, never a person's record.",
+  "author": {
+    "name": "Kindtech",
+    "url": "https://github.com/KindTechUK"
+  },
+  "homepage": "https://github.com/KindTechUK/plugins",
+  "repository": "https://github.com/KindTechUK/plugins",
+  "license": "Apache-2.0",
+  "keywords": ["charity", "nonprofit", "uk", "open-data", "deprivation", "grants"]
+}

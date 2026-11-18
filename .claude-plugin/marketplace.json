@@ -1,0 +1,11 @@
+{
+  "name": "kindtech",
+  "owner": {
+    "name": "Kindtech",
+    "url": "https://github.com/KindTechUK"
+  },
+  "metadata": {
+    "description": "Skills and connectors for UK charities: open data, charity practice and research, each tested against the assistant alone."
+  },
+  "plugins": []
+}

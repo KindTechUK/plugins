@@ -1,0 +1,13 @@
+{
+  "name": "uk-nonprofit",
+  "version": "0.1.0",
+  "description": "UK charity practice for an AI assistant: regulation, fundraising and reporting know-how written for people who run and fund charities. Skills only, nothing to host or connect.",
+  "author": {
+    "name": "Kindtech",
+    "url": "https://github.com/KindTechUK"
+  },
+  "homepage": "https://github.com/KindTechUK/plugins",
+  "repository": "https://github.com/KindTechUK/plugins",
+  "license": "Apache-2.0",
+  "keywords": ["charity", "nonprofit", "uk", "fundraising", "governance"]
+}
