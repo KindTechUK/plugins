@@ -1,0 +1,86 @@
+[
+  {
+    "query": "I'm doing our Reaching Communities application and there's a box asking for evidence of need in the local area. We're an advice centre in Catford. what do I put, I need actual numbers not waffle",
+    "should_trigger": true
+  },
+  {
+    "query": "Our funder wants us to show we're reaching the most deprived neighbourhoods and not just whoever walks in. I've got a spreadsheet of last year's client postcodes (about 600 rows). How do I turn that into something for the bid?",
+    "should_trigger": true
+  },
+  {
+    "query": "need a paragraph on deprivation in Gateshead for a grant form, due tomorrow, we run a food bank",
+    "should_trigger": true
+  },
+  {
+    "query": "I ran the reach lens on our client list and saved the output as lens-result.json. Can you write up the need section for our bid to the City Bridge Foundation from it?",
+    "should_trigger": true
+  },
+  {
+    "query": "The trustees keep asking whether our befriending service actually serves the poorer parts of the borough. I want something evidence based for the fundraising pack, we cover Lewisham and Greenwich",
+    "should_trigger": true
+  },
+  {
+    "query": "writing a case for support for a youth club in Middlesbrough, can you help me evidence the level of need round here using IMD",
+    "should_trigger": true
+  },
+  {
+    "query": "Bid writer here. Client is a small homelessness charity in Hastings. The application asks 'how do you know there is a need for your project?' and I want to back it with deprivation data and who they reach rather than anecdotes.",
+    "should_trigger": true
+  },
+  {
+    "query": "can you compare where our service users live against how deprived those areas are? its for the monitoring section of a lottery grant and I have counts by neighbourhood already",
+    "should_trigger": true
+  },
+  {
+    "query": "Here are the figures the Kindtech tool gave me for our area. Help me word them for the 'local context' part of the application so I don't overclaim.",
+    "should_trigger": true
+  },
+  {
+    "query": "we need stats to prove our community cafe is in a deprived area for a council small grants form, postcode district is SE6",
+    "should_trigger": true
+  },
+  {
+    "query": "lens-result.json is what the reach lens gave us for the youth club. The trustees want a table of young people by deprivation decile but two rows came back blank, can you fill them in and tell me why some rows dropped out?",
+    "should_trigger": true
+  },
+  {
+    "query": "Can you help me write the budget justification for our grant application? We're asking for £48,200 over two years: a part-time adviser at 21 hours a week, £3,000 for volunteer expenses and 10% overheads.",
+    "should_trigger": false
+  },
+  {
+    "query": "Which funders give grants to small debt advice charities in south London? Ideally ones that fund core costs.",
+    "should_trigger": false
+  },
+  {
+    "query": "I need to write up the outcomes section of our end of grant report. We ran 40 sessions and 85% of people said their confidence improved. How do I present that?",
+    "should_trigger": false
+  },
+  {
+    "query": "what is the index of multiple deprivation and how is it calculated? revising for my social policy exam",
+    "should_trigger": false
+  },
+  {
+    "query": "Our charity's income went over £25,000 this year. Do we need an independent examination and what do we have to file with the Charity Commission?",
+    "should_trigger": false
+  },
+  {
+    "query": "Can you proofread this evidence of need section I already wrote and tighten it to 150 words? Don't change any of the numbers.",
+    "should_trigger": false
+  },
+  {
+    "query": "I've got a csv of volunteer postcodes and I want to work out the average distance they travel to our three sites so we can plan the rota",
+    "should_trigger": false
+  },
+  {
+    "query": "Write a theory of change for a befriending project for isolated older people, for a funding application",
+    "should_trigger": false
+  },
+  {
+    "query": "We're a housing developer and need a deprivation profile of the area around a site in Leeds for a planning statement",
+    "should_trigger": false
+  },
+  {
+    "query": "how many people in Scotland live in the most deprived SIMD quintile? need it for a slide",
+    "should_trigger": false
+  }
+]

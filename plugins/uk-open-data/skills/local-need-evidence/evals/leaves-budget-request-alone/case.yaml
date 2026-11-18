@@ -1,0 +1,5 @@
+schema_version: "1.1"
+name: leaves-budget-request-alone
+expected_outcome: |
+  A normal, useful answer about justifying the budget lines. No deprivation analysis,
+  no request for client postcodes, and the skill is not loaded.

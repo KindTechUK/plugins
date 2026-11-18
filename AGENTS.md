@@ -98,10 +98,14 @@ Any skill inside `plugins/` needs an `evals/` folder with three things.
 Running the cases costs money, because each one is a real model run, with the skill and without it. From the skill's folder:
 
 ```bash
-claude plugin eval . --judge-model sonnet --no-publish
+claude plugin eval . --scaffold --runs 3 --judge-model sonnet --no-publish
 ```
 
-Add `--max-cost-usd 0` to check that the cases load without running anything. Results are written to `evals/results/`, which is not committed. Copy the scores into `benchmark.json` by hand.
+`--scaffold` lets a case copy its input files into place with the script named in its `case.yaml`, so read that script before you run someone else's case. Add `--max-cost-usd 0` to check that the cases load without running anything, and set a real ceiling on every paid run. Add `--case <name>` to run one case again after a change that touches only that case.
+
+Give each case that should load the skill a `tool_used` grader for the `Skill` tool with `arm: with-only`. It is not scored. It shows whether the skill loaded at all, which is the first thing to check when a case scores no better with the skill than without it.
+
+Results are written to `evals/results/`, which is not committed. Copy the scores into `benchmark.json` by hand. Keys beyond the five the linter reads are welcome: the judge model, the cost, the score for each case and the runs on other models.
 
 ## Adding a skill
 

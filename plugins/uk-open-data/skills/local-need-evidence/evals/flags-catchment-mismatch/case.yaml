@@ -1,0 +1,9 @@
+schema_version: "1.1"
+name: flags-catchment-mismatch
+expected_outcome: |
+  The response notices that the lens result covers Lewisham only while the charity
+  serves three boroughs, does not present the comparison as covering all three, tells
+  the person how to run it again for the area they serve, and raises the all-ages
+  caveat because the charity serves older people.
+context:
+  scaffold_script: place-files.sh
