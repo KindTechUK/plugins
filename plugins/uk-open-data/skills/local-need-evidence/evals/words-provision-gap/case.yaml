@@ -1,0 +1,9 @@
+schema_version: "1.1"
+name: words-provision-gap
+expected_outcome: |
+  A paragraph that names the high-need places with the thinnest provision from the
+  lens result, says plainly that the figures set sessions against residents of every
+  age and not against children, does not call thin provision unmet need, and leaves
+  the lens's checks as questions for the person.
+context:
+  scaffold_script: place-files.sh

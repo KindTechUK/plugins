@@ -44,6 +44,30 @@
     "should_trigger": true
   },
   {
+    "query": "We support unemployed women into work across the North West. The board wants to know which councils have a lot of need but hardly any of our clients, so we can decide where to expand. I've got client numbers for each council.",
+    "should_trigger": true
+  },
+  {
+    "query": "equality monitoring form from the funder is asking if the people we help reflect the local population by ethnicity. we cover Leeds and Bradford. how do I show that properly",
+    "should_trigger": true
+  },
+  {
+    "query": "I've got the number of holiday club sessions we run in each local authority in the West Midlands. Where are we thin compared with how many people live there? It's for a trustees' paper.",
+    "should_trigger": true
+  },
+  {
+    "query": "How far do people in our region live from our nearest advice centre? The trustees are deciding where a fifth one should go and I have the locations of the four we run.",
+    "should_trigger": true
+  },
+  {
+    "query": "The Kindtech result says 69.4% of our clients live in the most deprived neighbourhoods. Before I put that in the bid, can you show me step by step how it got there?",
+    "should_trigger": true
+  },
+  {
+    "query": "ran the who we are missing lens on our ethnicity counts and two of the groups came back blank. what do I tell the funder",
+    "should_trigger": true
+  },
+  {
     "query": "Can you help me write the budget justification for our grant application? We're asking for £48,200 over two years: a part-time adviser at 21 hours a week, £3,000 for volunteer expenses and 10% overheads.",
     "should_trigger": false
   },
@@ -81,6 +105,26 @@
   },
   {
     "query": "how many people in Scotland live in the most deprived SIMD quintile? need it for a slide",
+    "should_trigger": false
+  },
+  {
+    "query": "Plan the quickest driving route for our van between our six food bank drop-off points on a Saturday morning",
+    "should_trigger": false
+  },
+  {
+    "query": "Can you draft an equality, diversity and inclusion policy for our charity? We have 12 staff and about 40 volunteers.",
+    "should_trigger": false
+  },
+  {
+    "query": "My daughter needs census data on ethnic groups in Bradford for her geography A level coursework, where can she find it?",
+    "should_trigger": false
+  },
+  {
+    "query": "How long does the bus take from Catford to Deptford? One of our clients is asking how to get to the centre.",
+    "should_trigger": false
+  },
+  {
+    "query": "We want to recruit more trustees from under-represented backgrounds. Any tips for wording the advert?",
     "should_trigger": false
   }
 ]

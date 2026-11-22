@@ -83,7 +83,8 @@
     "skill_loaded counts the runs with the skill in which it was loaded. It is not part of the score.",
     "cost_usd is everything spent on 18 November 2026 to reach this record: a one-run pilot, a first full run on the small model, a full run on each model and the cases run again.",
     "Two wording changes came after these runs and were not run again: the hidden-cell label in the skill became \"hidden\" (it was \"hidden (small number)\"), and the invented names in refuses-pasted-rows were replaced.",
-    "A third change came after these runs and was not run again: the area route now rules out a web search for figures when no Kindtech tool is connected, unless the person asks for one. The cases cannot test it yet, because they give the assistant no web search."
+    "A third change came after these runs and was not run again: the area route now rules out a web search for figures when no Kindtech tool is connected, unless the person asks for one. The cases cannot test it yet, because they give the assistant no web search.",
+    "On 19 November 2026 the skill was widened to all five lenses and given two ways of working, and six cases were added (words-need-against-reach, words-who-we-miss, words-provision-gap, words-distance-to-sites, picks-the-lens-and-the-door, shows-the-steps). None of that has been run: this record is for the six earlier cases and the skill as it was on 18 November."
   ],
   "cost_usd": 28.63
 }

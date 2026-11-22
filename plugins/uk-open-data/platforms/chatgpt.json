@@ -2,7 +2,7 @@
   "interface": {
     "displayName": "Kindtech UK open data",
     "shortDescription": "UK open data for charities",
-    "longDescription": "Answer a charity's questions with UK open data, starting with evidence of local need for a grant application. Figures are worked out in code from official sources such as the English Indices of Deprivation, and come back with their source, the working, and the things a person must check. The assistant is given totals only and never a record about one person.",
+    "longDescription": "Answer a charity's questions with UK open data: evidence of local need for a grant application, whether you reach people in the most deprived neighbourhoods, where need is high and your reach or provision is thin, which groups you reach less than their share of local residents, and how far people are from your nearest site. Figures are worked out in code from official sources such as the English Indices of Deprivation and the 2021 Census, and come back with their source, the working, and the things a person must check. The assistant is given totals only and never a record about one person.",
     "developerName": "Kindtech",
     "category": "Productivity",
     "capabilities": ["Read"],

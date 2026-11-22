@@ -1,6 +1,6 @@
 {
   "name": "uk-open-data",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Answer a charity's questions with UK open data. Figures are worked out in code from official sources, and the assistant sees totals, never a person's record.",
   "author": {
     "name": "Kindtech",

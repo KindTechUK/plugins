@@ -23,7 +23,7 @@ In Claude Code:
 
 Then ask for what you need in your own words, for example "help me write the evidence of local need for our grant application". In another assistant that reads skills, copy a skill's folder from `plugins/<plugin>/skills/` into its skills folder.
 
-The first skill, [local-need evidence for a grant application](plugins/uk-open-data/skills/local-need-evidence), is at sandbox maturity. `uk-nonprofit` and `research` have no skill yet, so they are not listed for install.
+The first skill, [evidence of local need and reach](plugins/uk-open-data/skills/local-need-evidence), is at sandbox maturity. `uk-nonprofit` and `research` have no skill yet, so they are not listed for install.
 
 ## How a skill earns its place
 
