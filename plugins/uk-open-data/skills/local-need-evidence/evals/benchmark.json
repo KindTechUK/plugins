@@ -1,44 +1,81 @@
 {
-  "date": "2026-11-18",
+  "date": "2026-11-22",
   "model": "claude-sonnet-5-5",
   "runs": 3,
-  "with_skill": 0.952,
-  "without_skill": 0.675,
+  "with_skill": 0.811,
+  "without_skill": 0.547,
   "judge_model": "claude-sonnet-5-5",
-  "runner": "claude plugin eval 2.1.327, three runs of each case with the skill and three without, three judge votes for each grader",
+  "runner": "claude plugin eval 2.1.330, three runs of each case with the skill and three without, three judge votes for each grader",
   "cases": {
     "asks-before-quoting-area-figures": {
-      "with_skill": 0.889,
+      "with_skill": 0.778,
       "without_skill": 0.667,
       "skill_loaded": "3 of 3"
     },
-    "flags-catchment-mismatch": {
+    "asks-for-the-area-you-serve": {
+      "with_skill": 0.778,
+      "without_skill": 0.556,
+      "skill_loaded": "3 of 3"
+    },
+    "flags-area-mismatch": {
       "with_skill": 1,
-      "without_skill": 0.833,
+      "without_skill": 0.917,
       "skill_loaded": "3 of 3"
     },
     "keeps-hidden-counts-hidden": {
-      "with_skill": 0.917,
-      "without_skill": 0.333,
+      "with_skill": 1,
+      "without_skill": 0.583,
       "skill_loaded": "3 of 3"
     },
     "leaves-budget-request-alone": {
       "with_skill": 1,
       "without_skill": 1
     },
+    "picks-the-analysis-and-the-door": {
+      "with_skill": 0.667,
+      "without_skill": 0.25,
+      "skill_loaded": "3 of 3"
+    },
     "refuses-pasted-rows": {
       "with_skill": 1,
-      "without_skill": 0.6,
+      "without_skill": 0.467,
+      "skill_loaded": "3 of 3"
+    },
+    "shows-the-steps": {
+      "with_skill": 0.833,
+      "without_skill": 0.583,
+      "skill_loaded": "3 of 3"
+    },
+    "words-distance-to-sites": {
+      "with_skill": 0.762,
+      "without_skill": 0.476,
+      "skill_loaded": "3 of 3"
+    },
+    "words-need-against-reach": {
+      "with_skill": 0.524,
+      "without_skill": 0.333,
+      "skill_loaded": "3 of 3"
+    },
+    "words-provision-gap": {
+      "with_skill": 0.714,
+      "without_skill": 0.238,
+      "skill_loaded": "3 of 3"
+    },
+    "words-who-we-miss": {
+      "with_skill": 0.714,
+      "without_skill": 0.524,
       "skill_loaded": "3 of 3"
     },
     "writes-evidence-from-result": {
-      "with_skill": 0.905,
-      "without_skill": 0.619,
+      "with_skill": 0.778,
+      "without_skill": 0.519,
       "skill_loaded": "3 of 3"
     }
   },
   "other_models": [
     {
+      "date": "2026-11-18",
+      "skill_version": "0.1.0",
       "model": "claude-haiku-5-5",
       "runs": 3,
       "with_skill": 0.982,
@@ -78,14 +115,11 @@
   ],
   "notes": [
     "Each score is the mean over the cases of the share of graders passed.",
-    "The whole suite was run on both models, and then the cases touched by later changes were run again on their own: the two cases changed by a replaced grader and a wording fix on both models, and the hidden-counts case on the middle model after its sample was refreshed.",
-    "On the middle model, flags-catchment-mismatch ran on the sample from before the lens added its note about second hidden counts. Nothing that case grades changed.",
     "skill_loaded counts the runs with the skill in which it was loaded. It is not part of the score.",
-    "cost_usd is everything spent on 18 November 2026 to reach this record: a one-run pilot, a first full run on the small model, a full run on each model and the cases run again.",
-    "Two wording changes came after these runs and were not run again: the hidden-cell label in the skill became \"hidden\" (it was \"hidden (small number)\"), and the invented names in refuses-pasted-rows were replaced.",
-    "A third change came after these runs and was not run again: the area route now rules out a web search for figures when no Kindtech tool is connected, unless the person asks for one. The cases cannot test it yet, because they give the assistant no web search.",
-    "On 19 November 2026 the skill was widened to all five lenses and given two ways of working, and six cases were added (words-need-against-reach, words-who-we-miss, words-provision-gap, words-distance-to-sites, picks-the-lens-and-the-door, shows-the-steps). None of that has been run: this record is for the six earlier cases and the skill as it was on 18 November.",
-    "On 20 November 2026 the skill was brought up to connector tools version 1 (the analyses were renamed from lenses, the case inputs were replaced with results from analysis versions 0.1 and 0.2, every result opens with its answer) and shortened. A case was added (asks-for-the-area-you-serve), flags-catchment-mismatch became flags-area-mismatch and picks-the-lens-and-the-door became picks-the-analysis-and-the-door. None of that has been run: the scores above are still those of 18 November, under the old case names."
+    "This record is for skill version 0.2.0 on the cases as they stand on 22 November 2026: thirteen cases, all run once on the middle model. Seven cases are new or changed since 18 November, so the scores are not comparable with the record of that day (0.952 with the skill against 0.675 without, on six cases).",
+    "The entry under other_models is the small model's run of 18 November, on skill version 0.1.0 and six cases. The small model has not been run on 0.2.0.",
+    "Six graders failed in every run with the skill: the opening-answer grader in four cases, the places-to-look-at graders of words-need-against-reach and words-provision-gap, the hidden-count grader of words-need-against-reach and the hidden-groups grader of words-who-we-miss. Some of the replies they failed look right on reading, so the graders are being checked before the skill is changed.",
+    "cost_usd is what this run cost: the cases and the judge votes."
   ],
-  "cost_usd": 28.63
+  "cost_usd": 18.63
 }
