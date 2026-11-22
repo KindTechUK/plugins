@@ -124,10 +124,10 @@ The plugin folders are the one source. A build step writes each other assistant'
 
 ```bash
 uv run python scripts/build_chatgpt_archive.py uk-open-data
-uv run python scripts/build_chatgpt_archive.py uk-open-data --connector-url https://<host>/mcp
+uv run python scripts/build_chatgpt_archive.py uk-open-data --connector-url https://<staging host>/mcp
 ```
 
-This writes `dist/uk-open-data-chatgpt-<version>.zip` in the portable [Agent Plugins](https://agent-plugins.org) layout: `plugin.json`, `skills/` without the eval folders, and `mcp.json` when a connector address is given. The listing text ChatGPT shows comes from `plugins/<plugin>/platforms/chatgpt.json`. `dist/` is not committed.
+This writes `dist/uk-open-data-chatgpt-<version>.zip` in the portable [Agent Plugins](https://agent-plugins.org) layout: `plugin.json`, `skills/` without the eval folders, and `mcp.json` when the plugin has a connector. The connector's address is written once, in the plugin's `.mcp.json`, which also starts it when the plugin is installed in Claude Code. `--connector-url` replaces that address for one build, such as a test against a staging server. The listing text ChatGPT shows comes from `plugins/<plugin>/platforms/chatgpt.json`. `dist/` is not committed.
 
 ## Commits and pull requests
 

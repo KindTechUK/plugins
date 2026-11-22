@@ -4,12 +4,13 @@ Run from the repository root::
 
     uv run python scripts/build_chatgpt_archive.py uk-open-data
     uv run python scripts/build_chatgpt_archive.py uk-open-data \
-        --connector-url https://example.org/mcp
+        --connector-url https://staging.example.org/mcp
 
 The plugin folders here are laid out for one assistant's marketplace. This script
 writes the same skills in the portable Agent Plugins layout that ChatGPT reads:
-a ``plugin.json`` at the root, ``skills/`` beside it, and ``mcp.json`` when a
-connector address is given. Eval folders are left out. Nothing in the plugin
+a ``plugin.json`` at the root, ``skills/`` beside it, and ``mcp.json`` when the
+plugin's ``.mcp.json`` names the connector or ``--connector-url`` gives an address,
+which wins. Eval folders are left out. Nothing in the plugin
 folder is changed.
 """
 
@@ -54,7 +55,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("plugin", help="the folder name under plugins/")
     parser.add_argument(
         "--connector-url",
-        help="the https address of the hosted connector; leave out for skills only",
+        help="the connector's https address, in place of the plugin's .mcp.json",
     )
     parser.add_argument("--root", default=".", type=Path, help="the repository root")
     parser.add_argument("--out", default="dist", type=Path, help="the output folder")
@@ -103,6 +104,7 @@ def collect_files(
     if not skills:
         raise BuildError(f"{plugin_dir} has no skill to package")
     files.update(skills)
+    connector_url = connector_url or plugin_connector_url(plugin_dir)
     if connector_url:
         files["mcp.json"] = _as_json(mcp_config(connector_url))
     licence = root / "LICENSE"
@@ -129,6 +131,18 @@ def portable_manifest(source: dict, plugin_dir: Path) -> dict:
     if interface:
         manifest["extensions"] = {OPENAI: {"interface": interface}}
     return manifest
+
+
+def plugin_connector_url(plugin_dir: Path) -> str | None:
+    """Return the connector address the plugin's own ``.mcp.json`` names, if any."""
+    path = plugin_dir / ".mcp.json"
+    if not path.is_file():
+        return None
+    server = json.loads(path.read_text(encoding="utf-8")).get("mcpServers", {})
+    url = server.get(CONNECTOR_NAME, {}).get("url")
+    if not url:
+        raise BuildError(f'{path} has no "url" for the "{CONNECTOR_NAME}" server')
+    return str(url)
 
 
 def mcp_config(connector_url: str) -> dict:

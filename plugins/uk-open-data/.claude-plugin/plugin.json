@@ -9,5 +9,6 @@
   "homepage": "https://github.com/KindTechUK/plugins",
   "repository": "https://github.com/KindTechUK/plugins",
   "license": "Apache-2.0",
-  "keywords": ["charity", "nonprofit", "uk", "open-data", "deprivation", "grants"]
+  "keywords": ["charity", "nonprofit", "uk", "open-data", "deprivation", "grants"],
+  "privacyPolicyUrl": "https://github.com/KindTechUK/plugins/blob/main/plugins/uk-open-data/README.md#privacy"
 }

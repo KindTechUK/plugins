@@ -79,6 +79,24 @@ def test_connector_address_adds_one_remote_server(repo: Path) -> None:
     assert server["extensions"]["com.openai"]["auth"] == {"type": "none"}
 
 
+def test_connector_address_comes_from_the_plugin_unless_given(repo: Path) -> None:
+    server = {"type": "http", "url": "https://example.org/mcp"}
+    config = {"mcpServers": {"kindtech": server}}
+    _write(repo / "plugins" / "uk-open-data" / ".mcp.json", json.dumps(config))
+    from_plugin = build.build_archive(repo, "uk-open-data", repo / "a")
+    given = build.build_archive(
+        repo, "uk-open-data", repo / "b", "https://staging.example.org/mcp"
+    )
+    with zipfile.ZipFile(from_plugin) as built:
+        assert json.loads(built.read("mcp.json"))["mcpServers"]["kindtech"]["url"] == (
+            "https://example.org/mcp"
+        )
+    with zipfile.ZipFile(given) as built:
+        assert json.loads(built.read("mcp.json"))["mcpServers"]["kindtech"]["url"] == (
+            "https://staging.example.org/mcp"
+        )
+
+
 @pytest.mark.parametrize(
     "url", ["http://example.org/mcp", "example.org/mcp", "https://me:pw@example.org"]
 )

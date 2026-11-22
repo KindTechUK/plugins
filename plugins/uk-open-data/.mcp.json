@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "kindtech": {
+      "type": "http",
+      "url": "https://app.kindte.ch/mcp"
+    }
+  }
+}
