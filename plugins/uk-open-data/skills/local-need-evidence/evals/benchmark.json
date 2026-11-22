@@ -119,7 +119,31 @@
     "This record is for skill version 0.2.0 on the cases as they stand on 22 November 2026: thirteen cases, all run once on the middle model. Seven cases are new or changed since 18 November, so the scores are not comparable with the record of that day (0.952 with the skill against 0.675 without, on six cases).",
     "The entry under other_models is the small model's run of 18 November, on skill version 0.1.0 and six cases. The small model has not been run on 0.2.0.",
     "Six graders failed in every run with the skill: the opening-answer grader in four cases, the places-to-look-at graders of words-need-against-reach and words-provision-gap, the hidden-count grader of words-need-against-reach and the hidden-groups grader of words-who-we-miss. Some of the replies they failed look right on reading, so the graders are being checked before the skill is changed.",
-    "cost_usd is what this run cost: the cases and the judge votes."
+    "cost_usd is what this run cost: the cases and the judge votes.",
+    "The rerun entry scores the skill as it was at 834f13f. The fixes made after it (hidden counts never sized, every lead-with figure in the draft, the answer before any warning, figures kept to their scope) have not been run."
   ],
-  "cost_usd": 18.63
+  "cost_usd": 18.63,
+  "rerun": {
+    "date": "2026-11-22",
+    "what": "The five cases touched by the fix of the same day (834f13f) and the three loosened graders, run again with the skill only, three runs each. Each reply was then judged again, grader by grader, by the large model.",
+    "runs": 3,
+    "cost_usd": 6.78,
+    "with_skill": {
+      "judge_claude-sonnet-5-5": {
+        "words-distance-to-sites": 0.619,
+        "words-need-against-reach": 0.81,
+        "words-provision-gap": 0.714,
+        "words-who-we-miss": 0.857,
+        "writes-evidence-from-result": 0.852
+      },
+      "judge_claude-opus-5-5": {
+        "words-distance-to-sites": 0.762,
+        "words-need-against-reach": 0.905,
+        "words-provision-gap": 0.857,
+        "words-who-we-miss": 1.0,
+        "writes-evidence-from-result": 1.0
+      }
+    },
+    "judges_agree": "96 of 111 grader verdicts. In every disagreement the middle model failed what the large model passed."
+  }
 }

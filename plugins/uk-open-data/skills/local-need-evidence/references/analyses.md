@@ -50,7 +50,7 @@ If a question fits two analyses, say what each would show and let the person pic
 
 ## `provision-gap`: provision gap
 
-- **Lead with** the high-need places where the charity provides least for each 1,000 people, by name, and the places where it provides nothing.
+- **Lead with** the high-need places where the charity provides least for each 1,000 people, by name, each with what it provides there and its rate for each 1,000, the places where it provides nothing, and the rate across the area.
 - **Inputs:** volumes by local authority (any door), or one row per site with a postcode and a volume (page or command line). A volume is what is provided, such as sessions, places or hours, and never a count of people.
 - **Judgement calls:** who the provision is set against (`need`), the area you serve (`catchment`), and how many places to list (`top`).
 - **What is particular:** unless `need` was set, provision is set against residents of every age. If the person's service is for children, older people or any other group, say plainly that the figures are not about that group as they stand, and offer to run it again with a measure that fits. This analysis hides nothing, because a volume is not a count of people.
