@@ -1,7 +1,7 @@
 schema_version: "1.1"
 name: words-who-we-miss
 expected_outcome: |
-  Two or three sentences and a table built from the lens result, with the two hidden
+  Two or three sentences and a table built from the analysis result, with the two hidden
   groups marked hidden and explained, the gap for the Mixed group stated as shares and
   not as a failure or a barrier, the people whose label matched no group accounted
   for, and the census date given.

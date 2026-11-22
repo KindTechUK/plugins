@@ -2,8 +2,8 @@ schema_version: "1.1"
 name: words-need-against-reach
 expected_outcome: |
   A short paragraph that names the high-need places with the lowest reach from the
-  lens result, leaves the two hidden counts hidden, does not call low reach unmet
-  need, says what the need figure counts and when, and leaves the lens's checks as
+  analysis result, leaves the two hidden counts hidden, does not call low reach unmet
+  need, says what the need figure counts and when, and leaves the analysis's checks as
   questions for the person.
 context:
   scaffold_script: place-files.sh

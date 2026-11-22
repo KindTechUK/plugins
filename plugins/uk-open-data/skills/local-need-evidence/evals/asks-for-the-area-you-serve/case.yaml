@@ -1,0 +1,9 @@
+schema_version: "1.1"
+name: asks-for-the-area-you-serve
+expected_outcome: |
+  The response says that the area compared was worked out from where the charity's
+  people already live, so it holds only places they already reach and cannot show
+  where they are missing. It asks which area they could serve and says the analysis
+  can be run again with it, and gives no figure for any place outside the four compared.
+context:
+  scaffold_script: place-files.sh

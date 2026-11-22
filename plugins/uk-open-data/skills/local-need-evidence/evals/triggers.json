@@ -12,7 +12,7 @@
     "should_trigger": true
   },
   {
-    "query": "I ran the reach lens on our client list and saved the output as lens-result.json. Can you write up the need section for our bid to the City Bridge Foundation from it?",
+    "query": "I ran the reach analysis on our client list and saved the output as analysis-result.json. Can you write up the need section for our bid to the City Bridge Foundation from it?",
     "should_trigger": true
   },
   {
@@ -40,7 +40,7 @@
     "should_trigger": true
   },
   {
-    "query": "lens-result.json is what the reach lens gave us for the youth club. The trustees want a table of young people by deprivation decile but two rows came back blank, can you fill them in and tell me why some rows dropped out?",
+    "query": "analysis-result.json is what the reach analysis gave us for the youth club. The trustees want a table of young people by deprivation decile but two rows came back blank, can you fill them in and tell me why some rows dropped out?",
     "should_trigger": true
   },
   {
@@ -64,7 +64,11 @@
     "should_trigger": true
   },
   {
-    "query": "ran the who we are missing lens on our ethnicity counts and two of the groups came back blank. what do I tell the funder",
+    "query": "ran the who we are missing analysis on our ethnicity counts and two of the groups came back blank. what do I tell the funder",
+    "should_trigger": true
+  },
+  {
+    "query": "Kindtech Evidence gave us a result for our provision against need, and the page says Birmingham and Cardiff are the places to look at first. Can you turn it into two sentences for our trustees' paper and tell me what I need to check before I use it?",
     "should_trigger": true
   },
   {

@@ -1,0 +1,364 @@
+{
+  "analysis_id": "access-distance",
+  "analysis_version": "0.1",
+  "package_version": "0.1.0",
+  "run_on": "2026-11-19",
+  "input_mode": "site_coordinates",
+  "figures": [
+    {
+      "id": "sites_supplied",
+      "label": "Sites in the data you gave",
+      "value": 2,
+      "unit": "count",
+      "note": "",
+      "suppressed": false
+    },
+    {
+      "id": "sites_located",
+      "label": "Sites placed in the United Kingdom",
+      "value": 2,
+      "unit": "count",
+      "note": "Distances are measured to these sites.",
+      "suppressed": false
+    },
+    {
+      "id": "areas_compared",
+      "label": "Local authorities compared",
+      "value": 8,
+      "unit": "areas",
+      "note": "",
+      "suppressed": false
+    },
+    {
+      "id": "people_in_need",
+      "label": "People in the area compared: Residents of every age",
+      "value": 91020,
+      "unit": "people",
+      "note": "",
+      "suppressed": false
+    },
+    {
+      "id": "average_distance_km",
+      "label": "Average distance to your nearest site, counting every person",
+      "value": 80.8,
+      "unit": "km",
+      "note": "Each person is counted at the centre of their local authority, so a place with many people counts for more.",
+      "suppressed": false
+    },
+    {
+      "id": "share_of_people_within_reach",
+      "label": "Share of people in a local authority within 10 km of a site",
+      "value": 40.7,
+      "unit": "percent",
+      "note": "",
+      "suppressed": false
+    },
+    {
+      "id": "people_beyond_reach",
+      "label": "People in a local authority more than 10 km from a site",
+      "value": 54020,
+      "unit": "people",
+      "note": "",
+      "suppressed": false
+    },
+    {
+      "id": "areas_beyond_reach",
+      "label": "Local authorities more than 10 km from a site",
+      "value": 5,
+      "unit": "areas",
+      "note": "",
+      "suppressed": false
+    },
+    {
+      "id": "farthest_distance_km",
+      "label": "Distance from the farthest local authority to a site",
+      "value": 475,
+      "unit": "km",
+      "note": "",
+      "suppressed": false
+    }
+  ],
+  "tables": [
+    {
+      "id": "priority_areas",
+      "title": "Far from a site: the places where a new site would reach most people",
+      "columns": [
+        "rank",
+        "geography_code",
+        "geography_name",
+        "people_in_need",
+        "distance_km"
+      ],
+      "rows": [
+        {
+          "rank": 1,
+          "geography_code": "E08000025",
+          "geography_name": "Birmingham",
+          "people_in_need": 40000,
+          "distance_km": 114
+        },
+        {
+          "rank": 2,
+          "geography_code": "W06000015",
+          "geography_name": "Cardiff",
+          "people_in_need": 10000,
+          "distance_km": 221
+        },
+        {
+          "rank": 3,
+          "geography_code": "E06000001",
+          "geography_name": "Hartlepool",
+          "people_in_need": 3000,
+          "distance_km": 149
+        },
+        {
+          "rank": 4,
+          "geography_code": "E07000223",
+          "geography_name": "Adur",
+          "people_in_need": 1000,
+          "distance_km": 71
+        },
+        {
+          "rank": 5,
+          "geography_code": "E06000053",
+          "geography_name": "Isles of Scilly",
+          "people_in_need": 20,
+          "distance_km": 475
+        }
+      ],
+      "detail": false
+    },
+    {
+      "id": "by_local_authority",
+      "title": "People and distance to a site in every local authority compared",
+      "columns": [
+        "geography_code",
+        "geography_name",
+        "people_in_need",
+        "need_band",
+        "distance_km",
+        "distance_band",
+        "within_reach"
+      ],
+      "rows": [],
+      "detail": true
+    }
+  ],
+  "map": {
+    "title": "Distance to your nearest site, by local authority",
+    "geography_type": "LAD",
+    "geography_year": 2023,
+    "table": "by_local_authority",
+    "code_column": "geography_code",
+    "layers": [
+      {
+        "id": "distance",
+        "label": "Distance to your nearest site",
+        "value_column": "distance_band",
+        "kind": "ordinal",
+        "note": "Straight-line distance from the centre of each local authority to your nearest site.",
+        "categories": [
+          "Under 5 km",
+          "5 to under 10 km",
+          "10 to under 20 km",
+          "20 to under 40 km",
+          "40 km or more"
+        ],
+        "emphasis": "high"
+      },
+      {
+        "id": "need",
+        "label": "People",
+        "value_column": "need_band",
+        "kind": "ordinal",
+        "note": "Local authorities in five equal groups by people.",
+        "categories": [
+          "Lowest fifth",
+          "Second fifth",
+          "Middle fifth",
+          "Fourth fifth",
+          "Highest fifth"
+        ],
+        "emphasis": "high"
+      }
+    ]
+  },
+  "working": [
+    {
+      "title": "Loaded the need figures",
+      "detail": "Residents of every age: 91,020 people in 8 local authorities in England and Wales. From TS008 - Sex (NM_2028_1). A copy kept on this machine was used, so nothing was fetched.",
+      "rows_in": null,
+      "rows_out": null
+    },
+    {
+      "title": "Loaded the centre of each local authority",
+      "detail": "8 local authorities in England and Wales, each with the latitude and longitude the ONS publishes for it. A copy kept on this machine was used, so nothing was fetched.",
+      "rows_in": null,
+      "rows_out": null
+    },
+    {
+      "title": "Read the site positions",
+      "detail": "2 rows. 0 had no latitude or longitude, or one that is not a number of degrees, and were left out.",
+      "rows_in": 2,
+      "rows_out": 2
+    },
+    {
+      "title": "Measured the distance to the nearest site",
+      "detail": "Area: England and Wales. No catchment was given, so every local authority in England and Wales is compared. For each of its 8 local authorities, the straight-line distance from its centre to the nearest of your 2 sites was measured, to the nearest kilometre. A site outside the area still counts as the nearest when it is. A local authority is within reach when that distance is 10 km or less.",
+      "rows_in": null,
+      "rows_out": null
+    },
+    {
+      "title": "Listed the places far from a site",
+      "detail": "The 5 local authorities more than 10 km from a site were put in order of people, most first. The first 5 are listed.",
+      "rows_in": null,
+      "rows_out": null
+    }
+  ],
+  "choices": [
+    {
+      "id": "need",
+      "label": "People distance is measured for",
+      "value": "Residents of every age",
+      "reason": "The census counts every local authority, with nothing hidden.",
+      "option": "need"
+    },
+    {
+      "id": "distance",
+      "label": "How distance is measured",
+      "value": "In a straight line, from the centre of each local authority to the nearest site",
+      "reason": "The package has no road or public transport times.",
+      "option": null
+    },
+    {
+      "id": "within_km",
+      "label": "Distance that counts as within reach",
+      "value": "10 km",
+      "reason": "10 km is what the analysis uses when no distance is set. Set the distance people will travel for what you offer.",
+      "option": "within_km"
+    },
+    {
+      "id": "catchment",
+      "label": "Area compared",
+      "value": "England and Wales",
+      "reason": "No catchment was given, so every local authority in England and Wales is compared.",
+      "option": "catchment"
+    },
+    {
+      "id": "top",
+      "label": "Places listed",
+      "value": 10,
+      "reason": "A short list is easier to act on.",
+      "option": "top"
+    }
+  ],
+  "checks": [
+    {
+      "id": "sites_public",
+      "question": "Is the address of every site public?",
+      "why": "The distances from several local authorities can show roughly where a site is. Do not share the result if a site's address is confidential, such as a refuge."
+    },
+    {
+      "id": "everything_listed",
+      "question": "Does the data list every site people can use today?",
+      "why": "A site left out makes the places near it look far from help. A site that has closed does the opposite."
+    },
+    {
+      "id": "straight_line",
+      "question": "Is straight-line distance a fair guide where you work?",
+      "why": "A river, a hill or a poor bus service can make a near site hard to reach. The analysis cannot see them."
+    },
+    {
+      "id": "need_fits",
+      "question": "Are these the people your sites are for: Residents of every age?",
+      "why": "Distance matters for the people who would use a site. Change the 'need' option if another measure fits better."
+    },
+    {
+      "id": "catchment",
+      "question": "Is this the area you could serve: England and Wales?",
+      "why": "A place you could never reach is not a gap. Name the area with the 'catchment' option."
+    }
+  ],
+  "caveats": [
+    "Distance is in a straight line. Roads, rivers, hills and public transport can make a short distance a long journey.",
+    "Distance is measured from the centre of each local authority, not from where each person lives. In a large local authority many people are much nearer or much farther than the figure says.",
+    "The figures say how far people are from a site. They do not say how far the people you see travel, or whether anyone far away needs you.",
+    "The residents are everyone counted on census day, 21 March 2021, of every age. Not all of them need what you offer."
+  ],
+  "warnings": [],
+  "sources": [
+    {
+      "id": "nomis-nm_2028_1",
+      "name": "TS008 - Sex (NM_2028_1)",
+      "publisher": "Office for National Statistics, through Nomis",
+      "url": "https://www.nomisweb.co.uk/api/v01/dataset/NM_2028_1.def.sdmx.json",
+      "licence": "Open Government Licence v3.0",
+      "edition": "Census 2021, taken on 21 March 2021. A copy kept on this machine, invented for a demonstration.",
+      "used_for": "People in need: Residents of every age.",
+      "attribution": []
+    },
+    {
+      "id": "ons-local-authority-centres-2023",
+      "name": "Local Authority Districts (December 2023) Boundaries UK",
+      "publisher": "Office for National Statistics, Open Geography Portal",
+      "url": "https://geoportal.statistics.gov.uk/",
+      "licence": "Open Government Licence v3.0",
+      "edition": "December 2023. A copy kept on this machine, invented for a demonstration.",
+      "used_for": "The centre of each local authority, to measure distance from.",
+      "attribution": [
+        "Source: Office for National Statistics licensed under the Open Government Licence v.3.0",
+        "Contains OS data \u00a9 Crown copyright and database right 2023"
+      ]
+    }
+  ],
+  "privacy": {
+    "suppress_below": null,
+    "cells_suppressed": 0,
+    "row_level_output": false,
+    "sent_to_third_parties": [],
+    "notes": [
+      "This analysis is about sites, not about people, so it hides no count.",
+      "The result holds distances and public counts for local authorities. It names no site and repeats no postcode or position.",
+      "Distances are given to the nearest kilometre. Even so, the distances from several local authorities can show roughly where a site is. Do not share the result if a site's address is confidential.",
+      "The need figures are public counts and are shown in full."
+    ]
+  },
+  "charts": [
+    {
+      "id": "people_in_priority_areas",
+      "title": "People in the places listed",
+      "table": "priority_areas",
+      "category_column": "geography_name",
+      "series": [
+        {
+          "column": "people_in_need",
+          "label": "People",
+          "unit": "people"
+        }
+      ],
+      "kind": "bar",
+      "note": ""
+    },
+    {
+      "id": "distance_in_priority_areas",
+      "title": "Distance to your nearest site from the places listed",
+      "table": "priority_areas",
+      "category_column": "geography_name",
+      "series": [
+        {
+          "column": "distance_km",
+          "label": "Kilometres",
+          "unit": "km"
+        }
+      ],
+      "kind": "bar",
+      "note": ""
+    }
+  ],
+  "answer": "Counting each person at the centre of their local authority, residents are 80.8 km from your nearest site on average, and 40.7% are within 10 km of one. Of the places farther away, a new site would reach most residents in Birmingham.",
+  "key_figures": [
+    "average_distance_km",
+    "share_of_people_within_reach",
+    "areas_beyond_reach"
+  ]
+}

@@ -1,7 +1,7 @@
 schema_version: "1.1"
 name: words-distance-to-sites
 expected_outcome: |
-  A paragraph built from the lens result that gives distances and no travel times,
+  A paragraph built from the analysis result that gives distances and no travel times,
   says the distance is a straight line from the centre of each local authority, asks
   first whether every site's address is public, and treats the 10 km limit as a choice
   the person can change.

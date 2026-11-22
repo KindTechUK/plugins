@@ -1,8 +1,8 @@
 schema_version: "1.1"
 name: shows-the-steps
 expected_outcome: |
-  A walk through the lens's working in order, with the rows in and out at each step,
-  how the headline share is made from the table, and the choices the lens made offered
+  A walk through the analysis's working in order, with the rows in and out at each step,
+  how the headline share is made from the table, and the choices the analysis made offered
   to the person as choices. No finished bid section, because the person asked to
   understand first.
 context:
