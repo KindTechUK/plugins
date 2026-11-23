@@ -18,6 +18,10 @@ As of the date above, all three are built and none is open to the public: the co
 
 The Kindtech connector's server name is `kindtech`. Its tools are `find_analysis` (which analyses exist, what each takes and which options it has, each with a code name and a label), `describe_place` (figures for one place in England) and `run_analysis_on_counts` (an analysis on totals). Each tool's own description and each reply say how to use it and what every status means: follow them. When no Kindtech tool is connected, these are the names to tell the person to look for once they add the connector.
 
+- **`describe_place`**: on `choose`, ask the person which place. On `not_accepted`, ask them for the postcode district or the council. On `not_covered`, show its message: the tool covers England only, and the analyses that cover England and Wales still work for a place in Wales.
+- **`input_problem`**: show its sentences as they are. Its `option` or `role` names what to ask the person for or correct.
+- **The map** goes to the person beside the answer. A map shades areas and never marks a person.
+
 ## The command
 
 ```
@@ -61,6 +65,10 @@ The result says what happened: the `postcode_lookup` entry in `choices`, and `pr
 
 As of the date above, the command is built and not yet released. It ships with version 0.2 of the `uk-open-data` package, from <https://github.com/KindTechUK/uk-open-data>. Until that version is on PyPI it installs only from that repository's development branch: say so, and give no PyPI command as working.
 
+## Figures from the web
+
+Only when the person asks for web figures after hearing that the Kindtech tools are not connected. Use the publisher's own pages alone, such as the government's statistics pages for the English Indices of Deprivation. Put the edition and a link beside each figure, head them "Looked up on the web, not worked out by Kindtech Evidence", and tell the person to check each one against its page before it goes in the bid. A remembered figure, a news story or a summary page may be from an older edition or about a different area, and the funder will check.
+
 ## What a result holds
 
 | Field | Use it for |
@@ -68,7 +76,7 @@ As of the date above, the command is built and not yet released. It ships with v
 | `answer` | One or two sentences that answer the analysis's question. Open with them, word for word |
 | `key_figures` | The ids of the figures to give after the answer |
 | `figures` | The headline numbers. Each has `label`, `value`, `unit`, `note` and `suppressed` |
-| `tables` | Totals, such as people by deprivation decile, or the places to look at first (`priority_areas`) |
+| `tables` | Totals, such as people by deprivation decile, or the places to look at first (`priority_areas`). A table with columns and no rows had its rows left out (`rows_left_out`): report it as left out, not empty |
 | `working` | The steps taken, in order |
 | `choices` | What the analysis decided for the person, and the `option` that changes it |
 | `checks` | Questions only the person can answer |
