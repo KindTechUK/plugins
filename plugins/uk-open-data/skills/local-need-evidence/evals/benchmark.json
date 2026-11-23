@@ -236,5 +236,19 @@
         "writes-evidence-from-result": 0.972
       }
     }
+  },
+  "held_out": {
+    "written": "2026-11-23",
+    "cases": [
+      "held-out-rural-reach",
+      "held-out-youth-need-reach",
+      "held-out-refuge-distance",
+      "held-out-parents-who-we-miss",
+      "held-out-wales-provision-gap"
+    ],
+    "inputs": "Made on 23 November 2026 with uk-open-data 0.2.0a1 (106b8e39, the same as main that day) on invented totals for real places: North Yorkshire, West Yorkshire, the North East, Hull and South Wales. Each case.yaml says how.",
+    "graders_frozen": "2026-11-23, after a second model reviewed every grader against its result file. The review tightened loopholes, fixed one scope error, and added graders for the caveat that matters most in each case. The opening-answer grader is kept as strict as in the tuned cases, so the two sets can be compared. A grader changes only if a judge shows it contradicts the result file, and the change is recorded here.",
+    "runs": "None yet. First run planned in the full run of December 2026, with and without the skill.",
+    "rule": "Never change the skill because a held-out case failed (AGENTS.md, Tests for a skill)."
   }
 }

@@ -1,0 +1,451 @@
+{
+  "analysis_id": "reach-deprivation",
+  "analysis_version": "0.1",
+  "package_version": "0.2.0a1",
+  "run_on": "2026-11-23",
+  "input_mode": "neighbourhood_counts",
+  "figures": [
+    {
+      "id": "people_supplied",
+      "label": "People in the data you gave",
+      "value": 4762,
+      "unit": "people",
+      "note": "",
+      "suppressed": false,
+      "exact": null
+    },
+    {
+      "id": "people_located",
+      "label": "People placed in an English neighbourhood",
+      "value": 4762,
+      "unit": "people",
+      "note": "",
+      "suppressed": false,
+      "exact": null
+    },
+    {
+      "id": "people_in_catchment",
+      "label": "People who live in the area you serve",
+      "value": 4762,
+      "unit": "people",
+      "note": "The decile figures below are about these people.",
+      "suppressed": false,
+      "exact": null
+    },
+    {
+      "id": "share_most_deprived_10",
+      "label": "Share of your people in the area you serve who live in the 10% most deprived neighbourhoods in England",
+      "value": 3.1,
+      "unit": "percent",
+      "note": "",
+      "suppressed": false,
+      "exact": 3.149937001259975
+    },
+    {
+      "id": "share_most_deprived_20",
+      "label": "Share of your people in the area you serve who live in the 20% most deprived neighbourhoods in England",
+      "value": 7.2,
+      "unit": "percent",
+      "note": "",
+      "suppressed": false,
+      "exact": 7.223855522889542
+    },
+    {
+      "id": "catchment_share_most_deprived_20",
+      "label": "Share of residents of the area you serve who live in the 20% most deprived neighbourhoods in England",
+      "value": 5.9,
+      "unit": "percent",
+      "note": "The comparison for the share of your people.",
+      "suppressed": false,
+      "exact": 5.865560926821137
+    },
+    {
+      "id": "reach_per_1000_most_deprived_20",
+      "label": "People reached per 1,000 residents in the neighbourhoods of the area you serve that are among the 20% most deprived in England",
+      "value": 9.4,
+      "unit": "per_1000",
+      "note": "",
+      "suppressed": false,
+      "exact": 9.400191282962153
+    },
+    {
+      "id": "reach_per_1000_elsewhere",
+      "label": "People reached per 1,000 residents in the rest of the area you serve",
+      "value": 7.52,
+      "unit": "per_1000",
+      "note": "",
+      "suppressed": false,
+      "exact": 7.522548063088603
+    }
+  ],
+  "tables": [
+    {
+      "id": "by_decile",
+      "title": "People and residents by deprivation decile, in the area you serve",
+      "columns": [
+        "imd_decile",
+        "people",
+        "share_of_people",
+        "residents",
+        "share_of_residents",
+        "people_per_1000",
+        "suppressed"
+      ],
+      "rows": [
+        {
+          "imd_decile": 1,
+          "people": 150,
+          "share_of_people": 3.1,
+          "residents": 16358,
+          "share_of_residents": 2.6,
+          "people_per_1000": 9.17,
+          "suppressed": false
+        },
+        {
+          "imd_decile": 2,
+          "people": 194,
+          "share_of_people": 4.1,
+          "residents": 20237,
+          "share_of_residents": 3.2,
+          "people_per_1000": 9.59,
+          "suppressed": false
+        },
+        {
+          "imd_decile": 3,
+          "people": 288,
+          "share_of_people": 6.0,
+          "residents": 39449,
+          "share_of_residents": 6.3,
+          "people_per_1000": 7.3,
+          "suppressed": false
+        },
+        {
+          "imd_decile": 4,
+          "people": 395,
+          "share_of_people": 8.3,
+          "residents": 42888,
+          "share_of_residents": 6.9,
+          "people_per_1000": 9.21,
+          "suppressed": false
+        },
+        {
+          "imd_decile": 5,
+          "people": 472,
+          "share_of_people": 9.9,
+          "residents": 59048,
+          "share_of_residents": 9.5,
+          "people_per_1000": 7.99,
+          "suppressed": false
+        },
+        {
+          "imd_decile": 6,
+          "people": 825,
+          "share_of_people": 17.3,
+          "residents": 104536,
+          "share_of_residents": 16.8,
+          "people_per_1000": 7.89,
+          "suppressed": false
+        },
+        {
+          "imd_decile": 7,
+          "people": 911,
+          "share_of_people": 19.1,
+          "residents": 125096,
+          "share_of_residents": 20.1,
+          "people_per_1000": 7.28,
+          "suppressed": false
+        },
+        {
+          "imd_decile": 8,
+          "people": 605,
+          "share_of_people": 12.7,
+          "residents": 89819,
+          "share_of_residents": 14.4,
+          "people_per_1000": 6.74,
+          "suppressed": false
+        },
+        {
+          "imd_decile": 9,
+          "people": 493,
+          "share_of_people": 10.4,
+          "residents": 61503,
+          "share_of_residents": 9.9,
+          "people_per_1000": 8.02,
+          "suppressed": false
+        },
+        {
+          "imd_decile": 10,
+          "people": 429,
+          "share_of_people": 9.0,
+          "residents": 64962,
+          "share_of_residents": 10.4,
+          "people_per_1000": 6.6,
+          "suppressed": false
+        }
+      ],
+      "detail": false,
+      "headings": {
+        "imd_decile": "Deprivation decile",
+        "people": "Your people",
+        "share_of_people": "Share of your people",
+        "residents": "Residents",
+        "share_of_residents": "Share of residents",
+        "people_per_1000": "Your people per 1,000 residents",
+        "suppressed": "Hidden"
+      },
+      "units": {
+        "share_of_people": "percent",
+        "share_of_residents": "percent"
+      }
+    },
+    {
+      "id": "by_local_authority",
+      "title": "People by local authority",
+      "columns": [
+        "lad_code",
+        "lad_name",
+        "local_authorities",
+        "people",
+        "share_of_people",
+        "in_catchment",
+        "suppressed"
+      ],
+      "rows": [
+        {
+          "lad_code": "E06000065",
+          "lad_name": "North Yorkshire",
+          "local_authorities": 1,
+          "people": 4762,
+          "share_of_people": 100.0,
+          "in_catchment": true,
+          "suppressed": false
+        }
+      ],
+      "detail": false,
+      "headings": {
+        "lad_code": "Code",
+        "lad_name": "Local authority",
+        "local_authorities": "Local authorities in this row",
+        "people": "Your people",
+        "share_of_people": "Share of your people",
+        "in_catchment": "In the area you serve",
+        "suppressed": "Hidden"
+      },
+      "units": {
+        "share_of_people": "percent"
+      }
+    },
+    {
+      "id": "by_neighbourhood",
+      "title": "Neighbourhoods in the area you serve: deprivation decile and people reached",
+      "columns": [
+        "geography_code",
+        "geography_name",
+        "lad_name",
+        "imd_decile",
+        "residents",
+        "people_band"
+      ],
+      "rows": [],
+      "detail": true,
+      "headings": {
+        "geography_code": "Code",
+        "geography_name": "Neighbourhood",
+        "lad_name": "Local authority",
+        "imd_decile": "Deprivation decile",
+        "residents": "Residents",
+        "people_band": "Your people, grouped"
+      },
+      "units": {}
+    }
+  ],
+  "map": {
+    "title": "Deprivation and people reached, by neighbourhood",
+    "geography_type": "LSOA",
+    "geography_year": 2021,
+    "table": "by_neighbourhood",
+    "code_column": "geography_code",
+    "layers": [
+      {
+        "id": "deprivation",
+        "label": "Deprivation decile",
+        "value_column": "imd_decile",
+        "kind": "sequential",
+        "note": "1 is the most deprived tenth of neighbourhoods in England.",
+        "categories": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "emphasis": "low"
+      },
+      {
+        "id": "people",
+        "label": "People reached",
+        "value_column": "people_band",
+        "kind": "ordinal",
+        "note": "The lowest band includes zero, so a neighbourhood with a few people looks the same as one with none.",
+        "categories": [
+          "fewer than 5",
+          "5 to 9",
+          "10 to 19",
+          "20 to 49",
+          "50 or more"
+        ],
+        "emphasis": "high"
+      }
+    ]
+  },
+  "working": [
+    {
+      "title": "Read the neighbourhood counts",
+      "detail": "379 rows covering 379 neighbourhoods and 4762 people. 0 rows had no code and were left out.",
+      "rows_in": 379,
+      "rows_out": 379
+    },
+    {
+      "title": "Joined neighbourhoods to the deprivation index",
+      "detail": "4762 people live in a neighbourhood covered by the English Indices of Deprivation 2025. 0 live outside England or have a code the index does not list.",
+      "rows_in": 4762,
+      "rows_out": 4762
+    },
+    {
+      "title": "Set the area you serve",
+      "detail": "Area: North Yorkshire. You gave the area. 4762 of the 4762 people located live in it. The decile figures and the map cover these people.",
+      "rows_in": 4762,
+      "rows_out": 4762
+    },
+    {
+      "title": "Counted people and residents by deprivation decile",
+      "detail": "Decile 1 is the most deprived tenth of neighbourhoods in England and decile 10 the least. For each decile, the people you reached in the area you serve were set against everyone who lives in its neighbourhoods of that decile (mid-2022 population).",
+      "rows_in": 4762,
+      "rows_out": 4762
+    },
+    {
+      "title": "Hid small counts",
+      "detail": "Counts from 1 to 4 for a named place or a deprivation decile were hidden, along with anything that would let them be worked out. 0 cells or figures were hidden.",
+      "rows_in": null,
+      "rows_out": null
+    }
+  ],
+  "choices": [
+    {
+      "id": "deprivation_measure",
+      "label": "Measure of deprivation",
+      "value": "English Indices of Deprivation 2025, overall index",
+      "reason": "It is the current official measure for England.",
+      "option": null
+    },
+    {
+      "id": "most_deprived",
+      "label": "What counts as most deprived",
+      "value": "Deciles 1 and 2: the 20% most deprived neighbourhoods",
+      "reason": "This is the cut most funders use.",
+      "option": null
+    },
+    {
+      "id": "catchment",
+      "label": "Area you serve",
+      "value": [
+        "North Yorkshire"
+      ],
+      "reason": "You gave the area.",
+      "option": "catchment"
+    },
+    {
+      "id": "suppress_below",
+      "label": "Smallest count shown",
+      "value": 5,
+      "reason": "Smaller counts could point at individuals, so they are hidden.",
+      "option": "suppress_below"
+    }
+  ],
+  "checks": [
+    {
+      "id": "counts_are_people",
+      "question": "Does each count stand for people, with nobody counted twice?",
+      "why": "The counts are added up as they are."
+    },
+    {
+      "id": "home_postcode",
+      "question": "Is the location where each person lives?",
+      "why": "The figures describe the neighbourhoods people live in. A postcode for a service, school or hostel would mislead."
+    },
+    {
+      "id": "period",
+      "question": "Does the data cover the period you are reporting on?",
+      "why": "The analysis cannot tell which dates the rows are from."
+    },
+    {
+      "id": "catchment",
+      "question": "Is this the area you serve: North Yorkshire?",
+      "why": "Reach per 1,000 residents is worked out for this area. A different area gives different figures."
+    }
+  ],
+  "caveats": [
+    "Deprivation is measured for neighbourhoods, not people. Someone who lives in a deprived neighbourhood is not necessarily deprived, and the reverse.",
+    "Deciles rank neighbourhoods within England only. They cannot be compared with the indices for Wales, Scotland or Northern Ireland.",
+    "Reach per 1,000 uses all residents of all ages. If you serve one group, such as older people, the true reach among that group is higher."
+  ],
+  "warnings": [],
+  "sources": [
+    {
+      "id": "iod-2025",
+      "name": "English Indices of Deprivation 2025 (File 7)",
+      "publisher": "Ministry of Housing, Communities and Local Government",
+      "url": "https://assets.publishing.service.gov.uk/media/691ded56d140bbbaa59a2a7d/File_7_IoD2025_All_Ranks_Scores_Deciles_Population_Denominators.csv",
+      "licence": "Open Government Licence v3.0",
+      "edition": "2025, on 2021 neighbourhoods, with mid-2022 population",
+      "used_for": "Deprivation decile, local authority and residents of each area.",
+      "attribution": []
+    }
+  ],
+  "privacy": {
+    "suppress_below": 5,
+    "cells_suppressed": 0,
+    "row_level_output": false,
+    "sent_to_third_parties": [],
+    "notes": [
+      "A count is hidden when it is small and is about a named place or a deprivation decile.",
+      "A hidden count is not always small. When only one count in a table is small, a second is hidden with it, so the first cannot be worked out from the total.",
+      "The map shows people in bands, and the lowest band includes zero, so a neighbourhood with a few people looks the same as one with none.",
+      "The number of people in local authorities that are not named is shown even when it is small, because it points at no place."
+    ]
+  },
+  "charts": [
+    {
+      "id": "people_by_decile",
+      "title": "Your people and residents of the area, by deprivation decile",
+      "table": "by_decile",
+      "category_column": "imd_decile",
+      "series": [
+        {
+          "column": "share_of_people",
+          "label": "Your people",
+          "unit": "percent"
+        },
+        {
+          "column": "share_of_residents",
+          "label": "Residents of the area",
+          "unit": "percent"
+        }
+      ],
+      "kind": "bar",
+      "note": "Decile 1 is the most deprived tenth of neighbourhoods in England."
+    }
+  ],
+  "answer": "Of your people in the area you serve, 7.2% live in the 20% most deprived neighbourhoods in England. Of everyone who lives in that area, 5.9% do, so you reach those neighbourhoods more than their share.",
+  "key_figures": [
+    "share_most_deprived_20",
+    "catchment_share_most_deprived_20",
+    "reach_per_1000_most_deprived_20"
+  ],
+  "code": "# Version 0.1 of this analysis, run with\n# uk-open-data 0.2.0a1. This runs it again with\n# the same settings. No row or heading of your table is written\n# here: put the name of your own column beside each role.\nimport pandas as pd\n\nfrom uk_open_data.analyses import run_analysis\n\ndata = pd.read_csv(\"your-table.csv\")\nresult = run_analysis(\n    \"reach-deprivation\",\n    data,\n    columns={\n        \"lsoa_code\": \"\",  # the name of your column\n        \"count\": \"\",  # the name of your column\n    },\n    options={\n        \"suppress_below\": 5,\n        \"postcode_lookup\": \"auto\",\n        \"catchment\": [\"North Yorkshire\"],\n        \"catchment_min_share\": 0.05,\n    },\n)\nprint(result.answer)\nfor figure in result.figures:\n    print(figure.label, figure.value)"
+}

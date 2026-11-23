@@ -1,0 +1,431 @@
+{
+  "analysis_id": "provision-gap",
+  "analysis_version": "0.2",
+  "package_version": "0.2.0a1",
+  "run_on": "2026-11-23",
+  "input_mode": "area_volumes",
+  "figures": [
+    {
+      "id": "volume_supplied",
+      "label": "Provision in the data you gave",
+      "value": 2110,
+      "unit": "count",
+      "note": "",
+      "suppressed": false,
+      "exact": null
+    },
+    {
+      "id": "volume_located",
+      "label": "Provision placed in a local authority in England or Wales",
+      "value": 2110,
+      "unit": "count",
+      "note": "",
+      "suppressed": false,
+      "exact": null
+    },
+    {
+      "id": "volume_in_catchment",
+      "label": "Provision in the area you serve",
+      "value": 2110,
+      "unit": "count",
+      "note": "The figures below are about this provision.",
+      "suppressed": false,
+      "exact": null
+    },
+    {
+      "id": "areas_compared",
+      "label": "Local authorities in the area you serve",
+      "value": 5,
+      "unit": "areas",
+      "note": "",
+      "suppressed": false,
+      "exact": null
+    },
+    {
+      "id": "areas_without_provision",
+      "label": "Local authorities where you provide nothing",
+      "value": 1,
+      "unit": "areas",
+      "note": "",
+      "suppressed": false,
+      "exact": null
+    },
+    {
+      "id": "people_in_need",
+      "label": "People in the area you serve (Residents of every age)",
+      "value": 1173990,
+      "unit": "people",
+      "note": "",
+      "suppressed": false,
+      "exact": null
+    },
+    {
+      "id": "volume_per_1000_in_need",
+      "label": "Provision per 1,000 residents, across the area",
+      "value": 1.8,
+      "unit": "per_1000",
+      "note": "",
+      "suppressed": false,
+      "exact": 1.7972895850901627
+    },
+    {
+      "id": "high_need_areas",
+      "label": "Local authorities with the most residents",
+      "value": 2,
+      "unit": "areas",
+      "note": "The top quarter of the places in it, by residents.",
+      "suppressed": false,
+      "exact": null
+    },
+    {
+      "id": "high_need_areas_without_provision",
+      "label": "The local authorities with the most residents where you provide nothing",
+      "value": 0,
+      "unit": "areas",
+      "note": "",
+      "suppressed": false,
+      "exact": null
+    },
+    {
+      "id": "share_of_provision_in_high_need_areas",
+      "label": "Share of your provision that is in the local authorities with the most residents",
+      "value": 78.2,
+      "unit": "percent",
+      "note": "",
+      "suppressed": false,
+      "exact": 78.19905213270142
+    },
+    {
+      "id": "share_of_need_in_high_need_areas",
+      "label": "Share of residents who live in those local authorities",
+      "value": 51.2,
+      "unit": "percent",
+      "note": "Compare this with the share of your provision.",
+      "suppressed": false,
+      "exact": 51.175904394415625
+    }
+  ],
+  "tables": [
+    {
+      "id": "priority_areas",
+      "title": "Places with the most residents, thinnest provision first",
+      "columns": [
+        "rank",
+        "geography_code",
+        "geography_name",
+        "people_in_need",
+        "volume",
+        "volume_per_1000_in_need"
+      ],
+      "rows": [
+        {
+          "rank": 1,
+          "geography_code": "W06000011",
+          "geography_name": "Swansea",
+          "people_in_need": 238490,
+          "volume": 450,
+          "volume_per_1000_in_need": 1.89
+        },
+        {
+          "rank": 2,
+          "geography_code": "W06000015",
+          "geography_name": "Cardiff",
+          "people_in_need": 362310,
+          "volume": 1200,
+          "volume_per_1000_in_need": 3.31
+        }
+      ],
+      "detail": false,
+      "headings": {
+        "rank": "Rank",
+        "geography_code": "Code",
+        "geography_name": "Local authority",
+        "people_in_need": "Residents",
+        "volume": "Provision",
+        "volume_per_1000_in_need": "Provision per 1,000 residents"
+      },
+      "units": {}
+    },
+    {
+      "id": "by_local_authority",
+      "title": "Residents and provision in every local authority in the area you serve",
+      "columns": [
+        "geography_code",
+        "geography_name",
+        "people_in_need",
+        "need_band",
+        "high_need",
+        "volume",
+        "volume_per_1000_in_need",
+        "provision_band"
+      ],
+      "rows": [
+        {
+          "geography_code": "W06000011",
+          "geography_name": "Swansea",
+          "people_in_need": 238490,
+          "volume": 450,
+          "volume_per_1000_in_need": 1.89,
+          "need_band": "Fourth fifth",
+          "high_need": true,
+          "provision_band": "Middle provision"
+        },
+        {
+          "geography_code": "W06000015",
+          "geography_name": "Cardiff",
+          "people_in_need": 362310,
+          "volume": 1200,
+          "volume_per_1000_in_need": 3.31,
+          "need_band": "Highest fifth",
+          "high_need": true,
+          "provision_band": "Higher provision"
+        },
+        {
+          "geography_code": "W06000016",
+          "geography_name": "Rhondda Cynon Taf",
+          "people_in_need": 237651,
+          "volume": 160,
+          "volume_per_1000_in_need": 0.67,
+          "need_band": "Middle fifth",
+          "high_need": false,
+          "provision_band": "Lower provision"
+        },
+        {
+          "geography_code": "W06000018",
+          "geography_name": "Caerphilly",
+          "people_in_need": 175952,
+          "volume": 0,
+          "volume_per_1000_in_need": 0.0,
+          "need_band": "Second fifth",
+          "high_need": false,
+          "provision_band": "None"
+        },
+        {
+          "geography_code": "W06000022",
+          "geography_name": "Newport",
+          "people_in_need": 159587,
+          "volume": 300,
+          "volume_per_1000_in_need": 1.88,
+          "need_band": "Lowest fifth",
+          "high_need": false,
+          "provision_band": "Lower provision"
+        }
+      ],
+      "detail": true,
+      "headings": {
+        "geography_code": "Code",
+        "geography_name": "Local authority",
+        "people_in_need": "Residents",
+        "need_band": "Residents, grouped",
+        "high_need": "Among the most residents",
+        "volume": "Provision",
+        "volume_per_1000_in_need": "Provision per 1,000 residents",
+        "provision_band": "Provision, grouped"
+      },
+      "units": {}
+    }
+  ],
+  "map": {
+    "title": "Residents and provision, by local authority",
+    "geography_type": "LAD",
+    "geography_year": 2023,
+    "table": "by_local_authority",
+    "code_column": "geography_code",
+    "layers": [
+      {
+        "id": "need",
+        "label": "Residents",
+        "value_column": "need_band",
+        "kind": "ordinal",
+        "note": "Local authorities in five equal groups by residents.",
+        "categories": [
+          "Lowest fifth",
+          "Second fifth",
+          "Middle fifth",
+          "Fourth fifth",
+          "Highest fifth"
+        ],
+        "emphasis": "high"
+      },
+      {
+        "id": "provision",
+        "label": "Provision per 1,000 residents",
+        "value_column": "provision_band",
+        "kind": "ordinal",
+        "note": "Local authorities where you provide are in three equal groups. The lowest band holds places where you provide nothing.",
+        "categories": [
+          "None",
+          "Lower provision",
+          "Middle provision",
+          "Higher provision"
+        ],
+        "emphasis": "high"
+      }
+    ]
+  },
+  "working": [
+    {
+      "title": "Loaded the need figures",
+      "detail": "Residents of every age: 59,597,530 people in 318 local authorities in England and Wales. From TS008 - Sex (NM_2028_1). Fetched from Nomis.",
+      "rows_in": null,
+      "rows_out": null
+    },
+    {
+      "title": "Read the provision by local authority",
+      "detail": "4 rows holding provision of 2,110. 0 rows had no local authority and were left out. 0 rows named a place the need figures do not list.",
+      "rows_in": 4,
+      "rows_out": 4
+    },
+    {
+      "title": "Joined provision to the need figures",
+      "detail": "Provision of 2,110 is in a local authority the need figures list. 0 is outside England and Wales, or in a local authority the figures do not list.",
+      "rows_in": null,
+      "rows_out": null
+    },
+    {
+      "title": "Set the area you serve",
+      "detail": "Area: Swansea, Cardiff, Rhondda Cynon Taf, Caerphilly, Newport. You gave the area. Of the provision of 2,110 placed, 2,110 is in it, in 4 of its 5 local authorities.",
+      "rows_in": null,
+      "rows_out": null
+    },
+    {
+      "title": "Set provision against residents",
+      "detail": "For each local authority, the provision was divided by the number of residents and multiplied by 1,000. A local authority is among those with the most residents when its count of residents is in the top quarter of the area (at or above 238,490).",
+      "rows_in": null,
+      "rows_out": null
+    },
+    {
+      "title": "Listed the places with the most residents and thin provision",
+      "detail": "The 2 places with the most residents were put in order of provision per 1,000 residents, lowest first, and then by residents, highest first. The first 2 are listed.",
+      "rows_in": null,
+      "rows_out": null
+    }
+  ],
+  "choices": [
+    {
+      "id": "need",
+      "label": "People you are trying to reach",
+      "value": "Residents of every age",
+      "reason": "The census counts every local authority, with nothing hidden.",
+      "option": "need"
+    },
+    {
+      "id": "high_need",
+      "label": "What counts as the most residents",
+      "value": "In the top quarter of the area you serve, by residents",
+      "reason": "A quarter keeps the list to the places that stand out.",
+      "option": null
+    },
+    {
+      "id": "catchment",
+      "label": "Area you serve",
+      "value": "Swansea, Cardiff, Rhondda Cynon Taf, Caerphilly, Newport",
+      "reason": "You gave the area.",
+      "option": "catchment"
+    },
+    {
+      "id": "top",
+      "label": "Places listed",
+      "value": 10,
+      "reason": "A short list is easier to act on.",
+      "option": "top"
+    }
+  ],
+  "checks": [
+    {
+      "id": "volume_is_provision",
+      "question": "Is the provision a count of sessions, places, boxes or hours, and not of people?",
+      "why": "This analysis shows provision as it is. Counts of people belong in the need against reach analysis, which hides small counts."
+    },
+    {
+      "id": "everything_listed",
+      "question": "Does the data list everything you provide in the area?",
+      "why": "A site left out makes its local authority look like a gap."
+    },
+    {
+      "id": "period",
+      "question": "Does the data cover the period you are reporting on?",
+      "why": "The analysis cannot tell which dates the rows are from."
+    },
+    {
+      "id": "need_fits",
+      "question": "Are these the people you provide for: Residents of every age?",
+      "why": "Provision is only meaningful against the people it is for. Change 'People you are trying to reach' if another measure fits better."
+    },
+    {
+      "id": "catchment",
+      "question": "Is this the area you serve: Swansea, Cardiff, Rhondda Cynon Taf, Caerphilly, Newport?",
+      "why": "A place you could never reach is not a gap. Change 'Area you serve' if it is not."
+    }
+  ],
+  "caveats": [
+    "Thin provision is not the same as unmet need. Another organisation may already provide in a place where you provide little.",
+    "Provision is counted where a site is. People travel, so a site can serve the local authority next door.",
+    "The places listed are the ones with the most residents. That says where most people live, not where need is highest.",
+    "The residents are everyone counted on census day, 21 March 2021, of every age. Not all of them need what you offer."
+  ],
+  "warnings": [],
+  "sources": [
+    {
+      "id": "nomis-nm_2028_1",
+      "name": "TS008 - Sex (NM_2028_1)",
+      "publisher": "Office for National Statistics, through Nomis",
+      "url": "https://www.nomisweb.co.uk/api/v01/dataset/NM_2028_1.def.sdmx.json",
+      "licence": "Open Government Licence v3.0",
+      "edition": "Census 2021, taken on 21 March 2021",
+      "used_for": "People you are trying to reach: Residents of every age.",
+      "attribution": []
+    }
+  ],
+  "privacy": {
+    "suppress_below": null,
+    "cells_suppressed": 0,
+    "row_level_output": false,
+    "sent_to_third_parties": [],
+    "notes": [
+      "This analysis is about sites and what they provide, not about people, so it hides no count.",
+      "The result holds totals for local authorities. It names no site and repeats no postcode.",
+      "Where a local authority holds one site, the provision shown for it is that site's.",
+      "The need figures are public counts and are shown in full."
+    ]
+  },
+  "charts": [
+    {
+      "id": "need_in_priority_areas",
+      "title": "Residents in the places listed",
+      "table": "priority_areas",
+      "category_column": "geography_name",
+      "series": [
+        {
+          "column": "people_in_need",
+          "label": "Residents",
+          "unit": "people"
+        }
+      ],
+      "kind": "bar",
+      "note": ""
+    },
+    {
+      "id": "provision_in_priority_areas",
+      "title": "Provision per 1,000 residents in the places listed",
+      "table": "priority_areas",
+      "category_column": "geography_name",
+      "series": [
+        {
+          "column": "volume_per_1000_in_need",
+          "label": "Provision per 1,000 residents",
+          "unit": "per_1000"
+        }
+      ],
+      "kind": "bar",
+      "note": ""
+    }
+  ],
+  "answer": "51.2% of residents live in the 2 local authorities with the most residents, and 78.2% of your provision is there.",
+  "key_figures": [
+    "share_of_provision_in_high_need_areas",
+    "share_of_need_in_high_need_areas",
+    "high_need_areas_without_provision"
+  ],
+  "code": "# Version 0.2 of this analysis, run with\n# uk-open-data 0.2.0a1. This runs it again with\n# the same settings. No row or heading of your table is written\n# here: put the name of your own column beside each role.\nimport pandas as pd\n\nfrom uk_open_data.analyses import run_analysis\n\ndata = pd.read_csv(\"your-table.csv\")\nresult = run_analysis(\n    \"provision-gap\",\n    data,\n    columns={\n        \"local_authority\": \"\",  # the name of your column\n        \"volume\": \"\",  # the name of your column\n    },\n    options={\n        \"postcode_lookup\": \"auto\",\n        \"need\": \"residents\",\n        \"catchment\": [\"Cardiff\", \"Newport\", \"Swansea\", \"Rhondda Cynon Taf\", \"Caerphilly\"],\n        \"top\": 10,\n    },\n)\nprint(result.answer)\nfor figure in result.figures:\n    print(figure.label, figure.value)"
+}

@@ -1,0 +1,382 @@
+{
+  "analysis_id": "access-distance",
+  "analysis_version": "0.1",
+  "package_version": "0.2.0a1",
+  "run_on": "2026-11-23",
+  "input_mode": "site_coordinates",
+  "figures": [
+    {
+      "id": "sites_supplied",
+      "label": "Sites in the data you gave",
+      "value": 3,
+      "unit": "count",
+      "note": "",
+      "suppressed": false,
+      "exact": null
+    },
+    {
+      "id": "sites_located",
+      "label": "Sites placed in the United Kingdom",
+      "value": 3,
+      "unit": "count",
+      "note": "Distances are measured to these sites.",
+      "suppressed": false,
+      "exact": null
+    },
+    {
+      "id": "areas_compared",
+      "label": "Local authorities in the area you serve",
+      "value": 7,
+      "unit": "areas",
+      "note": "",
+      "suppressed": false,
+      "exact": null
+    },
+    {
+      "id": "people_in_need",
+      "label": "People in the area you serve (Residents of every age)",
+      "value": 1969825,
+      "unit": "people",
+      "note": "",
+      "suppressed": false,
+      "exact": null
+    },
+    {
+      "id": "average_distance_km",
+      "label": "Average distance from the centre of each person's local authority to your nearest site",
+      "value": 14.8,
+      "unit": "km",
+      "note": "Each person is counted at the centre of their local authority, so a place with many people counts for more.",
+      "suppressed": false,
+      "exact": 14.843733834223853
+    },
+    {
+      "id": "share_of_people_within_reach",
+      "label": "Share of people in a local authority whose centre is within 10 km of a site",
+      "value": 43.3,
+      "unit": "percent",
+      "note": "",
+      "suppressed": false,
+      "exact": 43.30430368179915
+    },
+    {
+      "id": "people_beyond_reach",
+      "label": "People in a local authority whose centre is more than 10 km from a site",
+      "value": 1116806,
+      "unit": "people",
+      "note": "",
+      "suppressed": false,
+      "exact": null
+    },
+    {
+      "id": "areas_beyond_reach",
+      "label": "Local authorities whose centre is more than 10 km from a site",
+      "value": 3,
+      "unit": "areas",
+      "note": "",
+      "suppressed": false,
+      "exact": null
+    },
+    {
+      "id": "farthest_distance_km",
+      "label": "Distance from the centre of the farthest local authority to a site",
+      "value": 28,
+      "unit": "km",
+      "note": "",
+      "suppressed": false,
+      "exact": null
+    }
+  ],
+  "tables": [
+    {
+      "id": "priority_areas",
+      "title": "Far from a site: the places where a new site would reach most people",
+      "columns": [
+        "rank",
+        "geography_code",
+        "geography_name",
+        "people_in_need",
+        "distance_km"
+      ],
+      "rows": [
+        {
+          "rank": 1,
+          "geography_code": "E06000047",
+          "geography_name": "County Durham",
+          "people_in_need": 522068,
+          "distance_km": 20
+        },
+        {
+          "rank": 2,
+          "geography_code": "E06000057",
+          "geography_name": "Northumberland",
+          "people_in_need": 320567,
+          "distance_km": 28
+        },
+        {
+          "rank": 3,
+          "geography_code": "E08000024",
+          "geography_name": "Sunderland",
+          "people_in_need": 274171,
+          "distance_km": 12
+        }
+      ],
+      "detail": false,
+      "headings": {
+        "rank": "Rank",
+        "geography_code": "Code",
+        "geography_name": "Local authority",
+        "people_in_need": "Residents",
+        "distance_km": "From its centre to your nearest site"
+      },
+      "units": {
+        "distance_km": "km"
+      }
+    },
+    {
+      "id": "by_local_authority",
+      "title": "People and distance to a site in every local authority in the area you serve",
+      "columns": [
+        "geography_code",
+        "geography_name",
+        "people_in_need",
+        "need_band",
+        "distance_km",
+        "distance_band",
+        "within_reach"
+      ],
+      "rows": [],
+      "detail": true,
+      "headings": {
+        "geography_code": "Code",
+        "geography_name": "Local authority",
+        "people_in_need": "Residents",
+        "need_band": "Residents, grouped",
+        "distance_km": "From its centre to your nearest site",
+        "distance_band": "From its centre to your nearest site, grouped",
+        "within_reach": "Within reach"
+      },
+      "units": {
+        "distance_km": "km"
+      }
+    }
+  ],
+  "map": {
+    "title": "Distance to your nearest site, by local authority",
+    "geography_type": "LAD",
+    "geography_year": 2023,
+    "table": "by_local_authority",
+    "code_column": "geography_code",
+    "layers": [
+      {
+        "id": "distance",
+        "label": "Distance to your nearest site",
+        "value_column": "distance_band",
+        "kind": "ordinal",
+        "note": "Straight-line distance from the centre of each local authority to your nearest site.",
+        "categories": [
+          "Under 5 km",
+          "5 to under 10 km",
+          "10 to under 20 km",
+          "20 to under 40 km",
+          "40 km or more"
+        ],
+        "emphasis": "high"
+      },
+      {
+        "id": "need",
+        "label": "People",
+        "value_column": "need_band",
+        "kind": "ordinal",
+        "note": "Local authorities in five equal groups by people.",
+        "categories": [
+          "Lowest fifth",
+          "Second fifth",
+          "Middle fifth",
+          "Fourth fifth",
+          "Highest fifth"
+        ],
+        "emphasis": "high"
+      }
+    ]
+  },
+  "working": [
+    {
+      "title": "Loaded the need figures",
+      "detail": "Residents of every age: 59,597,530 people in 318 local authorities in England and Wales. From TS008 - Sex (NM_2028_1). Fetched from Nomis.",
+      "rows_in": null,
+      "rows_out": null
+    },
+    {
+      "title": "Loaded the centre of each local authority",
+      "detail": "318 local authorities in England and Wales, each with the latitude and longitude the ONS publishes for it. Fetched from the ONS Open Geography Portal.",
+      "rows_in": null,
+      "rows_out": null
+    },
+    {
+      "title": "Read the site positions",
+      "detail": "3 rows. 0 had no latitude or longitude, or one that is not a number of degrees, and were left out.",
+      "rows_in": 3,
+      "rows_out": 3
+    },
+    {
+      "title": "Measured the distance to the nearest site",
+      "detail": "Area: County Durham, Northumberland, Newcastle upon Tyne, North Tyneside, South Tyneside, Sunderland, Gateshead. You gave the area. For each of its 7 local authorities, the straight-line distance from its centre to the nearest of your 3 sites was measured, to the nearest kilometre. A site outside the area still counts as the nearest when it is. A local authority is within reach when that distance is 10 km or less.",
+      "rows_in": null,
+      "rows_out": null
+    },
+    {
+      "title": "Listed the places far from a site",
+      "detail": "The 3 local authorities whose centre is more than 10 km from a site were put in order of people, most first. The first 3 are listed.",
+      "rows_in": null,
+      "rows_out": null
+    }
+  ],
+  "choices": [
+    {
+      "id": "need",
+      "label": "People you are trying to reach",
+      "value": "Residents of every age",
+      "reason": "The census counts every local authority, with nothing hidden.",
+      "option": "need"
+    },
+    {
+      "id": "distance",
+      "label": "How distance is measured",
+      "value": "In a straight line, from the centre of each local authority to the nearest site",
+      "reason": "The package has no road or public transport times.",
+      "option": null
+    },
+    {
+      "id": "within_km",
+      "label": "Distance that counts as within reach",
+      "value": "10 km",
+      "reason": "10 km is what the analysis uses when no distance is set. Set the distance people will travel for what you offer.",
+      "option": "within_km"
+    },
+    {
+      "id": "catchment",
+      "label": "Area you serve",
+      "value": "County Durham, Northumberland, Newcastle upon Tyne, North Tyneside, South Tyneside, Sunderland, Gateshead",
+      "reason": "You gave the area.",
+      "option": "catchment"
+    },
+    {
+      "id": "top",
+      "label": "Places listed",
+      "value": 10,
+      "reason": "A short list is easier to act on.",
+      "option": "top"
+    }
+  ],
+  "checks": [
+    {
+      "id": "sites_public",
+      "question": "Is the address of every site public?",
+      "why": "The distances from several local authorities can show roughly where a site is. Do not share the result if a site's address is confidential, such as a refuge."
+    },
+    {
+      "id": "everything_listed",
+      "question": "Does the data list every site people can use today?",
+      "why": "A site left out makes the places near it look far from help. A site that has closed does the opposite."
+    },
+    {
+      "id": "straight_line",
+      "question": "Is straight-line distance a fair guide where you work?",
+      "why": "A river, a hill or a poor bus service can make a near site hard to reach. The analysis cannot see them."
+    },
+    {
+      "id": "need_fits",
+      "question": "Are these the people your sites are for: Residents of every age?",
+      "why": "Distance matters for the people who would use a site. Change 'People you are trying to reach' if another measure fits better."
+    },
+    {
+      "id": "catchment",
+      "question": "Is this the area you serve: County Durham, Northumberland, Newcastle upon Tyne, North Tyneside, South Tyneside, Sunderland, Gateshead?",
+      "why": "A place you could never reach is not a gap. Change 'Area you serve' if it is not."
+    }
+  ],
+  "caveats": [
+    "Distance is in a straight line. Roads, rivers, hills and public transport can make a short distance a long journey.",
+    "Distance is measured from the centre of each local authority, not from where each person lives. In a large local authority many people are much nearer or much farther than the figure says, and a site can be inside the place and still be far from its centre.",
+    "The figures say how far people are from a site. They do not say how far the people you see travel, or whether anyone far away needs you.",
+    "The residents are everyone counted on census day, 21 March 2021, of every age. Not all of them need what you offer."
+  ],
+  "warnings": [],
+  "sources": [
+    {
+      "id": "nomis-nm_2028_1",
+      "name": "TS008 - Sex (NM_2028_1)",
+      "publisher": "Office for National Statistics, through Nomis",
+      "url": "https://www.nomisweb.co.uk/api/v01/dataset/NM_2028_1.def.sdmx.json",
+      "licence": "Open Government Licence v3.0",
+      "edition": "Census 2021, taken on 21 March 2021",
+      "used_for": "People you are trying to reach: Residents of every age.",
+      "attribution": []
+    },
+    {
+      "id": "ons-local-authority-centres-2023",
+      "name": "Local Authority Districts (December 2023) Boundaries UK",
+      "publisher": "Office for National Statistics, Open Geography Portal",
+      "url": "https://geoportal.statistics.gov.uk/",
+      "licence": "Open Government Licence v3.0",
+      "edition": "December 2023",
+      "used_for": "The centre of each local authority, to measure distance from.",
+      "attribution": [
+        "Source: Office for National Statistics licensed under the Open Government Licence v.3.0",
+        "Contains OS data © Crown copyright and database right 2023"
+      ]
+    }
+  ],
+  "privacy": {
+    "suppress_below": null,
+    "cells_suppressed": 0,
+    "row_level_output": false,
+    "sent_to_third_parties": [],
+    "notes": [
+      "This analysis is about sites, not about people, so it hides no count.",
+      "The result holds distances and public counts for local authorities. It names no site and repeats no postcode or position.",
+      "Distances are given to the nearest kilometre. Even so, the distances from several local authorities can show roughly where a site is. Do not share the result if a site's address is confidential.",
+      "The need figures are public counts and are shown in full."
+    ]
+  },
+  "charts": [
+    {
+      "id": "people_in_priority_areas",
+      "title": "People in the places listed",
+      "table": "priority_areas",
+      "category_column": "geography_name",
+      "series": [
+        {
+          "column": "people_in_need",
+          "label": "People",
+          "unit": "people"
+        }
+      ],
+      "kind": "bar",
+      "note": ""
+    },
+    {
+      "id": "distance_in_priority_areas",
+      "title": "Distance from the centre of each place listed to your nearest site",
+      "table": "priority_areas",
+      "category_column": "geography_name",
+      "series": [
+        {
+          "column": "distance_km",
+          "label": "Kilometres",
+          "unit": "km"
+        }
+      ],
+      "kind": "bar",
+      "note": ""
+    }
+  ],
+  "answer": "Counting each person at the centre of their local authority, residents are 14.8 km from your nearest site on average, and 43.3% are within 10 km of one. Of the places farther away, a new site would reach most residents in County Durham.",
+  "key_figures": [
+    "average_distance_km",
+    "share_of_people_within_reach",
+    "areas_beyond_reach"
+  ],
+  "code": "# Version 0.1 of this analysis, run with\n# uk-open-data 0.2.0a1. This runs it again with\n# the same settings. No row or heading of your table is written\n# here: put the name of your own column beside each role.\nimport pandas as pd\n\nfrom uk_open_data.analyses import run_analysis\n\ndata = pd.read_csv(\"your-table.csv\")\nresult = run_analysis(\n    \"access-distance\",\n    data,\n    columns={\n        \"latitude\": \"\",  # the name of your column\n        \"longitude\": \"\",  # the name of your column\n    },\n    options={\n        \"postcode_lookup\": \"auto\",\n        \"need\": \"residents\",\n        \"catchment\": [\"Newcastle upon Tyne\", \"North Tyneside\", \"South Tyneside\", \"Gateshead\", \"Sunderland\", \"Northumberland\", \"County Durham\"],\n        \"within_km\": 10,\n        \"top\": 10,\n    },\n)\nprint(result.answer)\nfor figure in result.figures:\n    print(figure.label, figure.value)"
+}
