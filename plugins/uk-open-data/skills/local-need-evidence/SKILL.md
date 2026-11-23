@@ -7,7 +7,7 @@ metadata:
   version: "0.2.0"
   maturity: sandbox
   supervision: review
-  reviewed: "2026-11-18"
+  reviewed: "2026-11-23"
 ---
 
 # Evidence of local need and reach
