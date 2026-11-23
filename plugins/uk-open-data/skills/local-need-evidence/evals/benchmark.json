@@ -121,7 +121,8 @@
     "Six graders failed in every run with the skill: the opening-answer grader in four cases, the places-to-look-at graders of words-need-against-reach and words-provision-gap, the hidden-count grader of words-need-against-reach and the hidden-groups grader of words-who-we-miss. Some of the replies they failed look right on reading, so the graders are being checked before the skill is changed.",
     "cost_usd is what this run cost: the cases and the judge votes.",
     "The rerun_2 entry scores the skill at 2ff1b4e. The rerun_3 entry scores it at f478efe (the site-address check after the answer, no word on which hidden count protects the other, no promise or plan the person has not made) on the graders as reworded in bce51be (the places-to-look-at graders of words-provision-gap and words-need-against-reach).",
-    "Six wording fixes made after rerun_3 have not been run: names copied as the result spells them, exact counts kept exact, figures and trends kept to where they hold, deprivation not called need, the hiding range quoted from the result with privacy alone as the reason in a draft, and combining offered only where the result or reply offers it."
+    "The rerun_4 entry scores six wording fixes made after rerun_3, at ebc2fec: names copied as the result spells them, exact counts kept exact, figures and trends kept to where they hold, deprivation not called need, the hiding range quoted from the result with privacy alone as the reason in a draft, and combining offered only where the result or reply offers it.",
+    "rerun_4 adds seven graders, so its scores are not comparable with the earlier re-runs: words-need-against-reach 08 (names as the result spells them), words-provision-gap 08 (thinnest only where it holds), words-who-we-miss 08 and 09 (no promise in the form text, two or three sentences) and writes-evidence-from-result 10, 11 and 12 (no claim the result does not hold, no promise in the section, about 200 words). On the graders the cases had before, the large model's judge failed one reply."
   ],
   "cost_usd": 18.63,
   "rerun": {
@@ -188,6 +189,28 @@
         "words-provision-gap": 1.0,
         "words-who-we-miss": 0.952,
         "writes-evidence-from-result": 1.0
+      }
+    }
+  },
+  "rerun_4": {
+    "date": "2026-11-23",
+    "what": "The same five cases on the skill at ebc2fec, with the seven graders added in b05c140, the skill only, three runs each, each reply judged again by the large model. The judges agree on 124 of 132 grader checks, and on 7 of the large model's 8 failures, all but one of them on the new graders.",
+    "runs": 3,
+    "cost_usd": 9.12,
+    "with_skill": {
+      "judge_claude-sonnet-5-5": {
+        "words-distance-to-sites": 1.0,
+        "words-need-against-reach": 0.875,
+        "words-provision-gap": 0.833,
+        "words-who-we-miss": 0.889,
+        "writes-evidence-from-result": 0.889
+      },
+      "judge_claude-opus-5-5": {
+        "words-distance-to-sites": 1.0,
+        "words-need-against-reach": 0.958,
+        "words-provision-gap": 0.958,
+        "words-who-we-miss": 0.926,
+        "writes-evidence-from-result": 0.889
       }
     }
   }
