@@ -1,0 +1,292 @@
+{
+  "analysis_id": "who-we-miss",
+  "analysis_version": "0.1",
+  "package_version": "0.2.0a1",
+  "run_on": "2026-11-23",
+  "input_mode": "group_counts",
+  "figures": [
+    {
+      "id": "people_supplied",
+      "label": "People in the data you gave",
+      "value": 240,
+      "unit": "people",
+      "note": "",
+      "suppressed": false,
+      "exact": null
+    },
+    {
+      "id": "people_in_catchment",
+      "label": "People set against the residents of the area you serve",
+      "value": 240,
+      "unit": "people",
+      "note": "With postcodes, the people who live in the area you serve. Without, everyone in your data.",
+      "suppressed": false,
+      "exact": null
+    },
+    {
+      "id": "people_matched",
+      "label": "People matched to a census group",
+      "value": 229,
+      "unit": "people",
+      "note": "The shares below are of these people.",
+      "suppressed": false,
+      "exact": null
+    },
+    {
+      "id": "people_not_matched",
+      "label": "People with no label, or one that matched no census group",
+      "value": 11,
+      "unit": "people",
+      "note": "",
+      "suppressed": false,
+      "exact": null
+    },
+    {
+      "id": "residents",
+      "label": "Residents of the area you serve in the 2021 Census",
+      "value": 267014,
+      "unit": "people",
+      "note": "",
+      "suppressed": false,
+      "exact": null
+    },
+    {
+      "id": "groups_under_represented",
+      "label": "Groups you reach less than their share of residents",
+      "value": 1,
+      "unit": "groups",
+      "note": "",
+      "suppressed": false,
+      "exact": null
+    },
+    {
+      "id": "share_of_people_first_group",
+      "label": "Share of your people in the first of those groups, Male",
+      "value": 17.9,
+      "unit": "percent",
+      "note": "",
+      "suppressed": false,
+      "exact": 17.903930131004365
+    },
+    {
+      "id": "share_of_residents_first_group",
+      "label": "Share of residents in that group, Male",
+      "value": 49.9,
+      "unit": "percent",
+      "note": "",
+      "suppressed": false,
+      "exact": 49.89738365778573
+    }
+  ],
+  "tables": [
+    {
+      "id": "by_group",
+      "title": "Your people and the residents of your area, by group",
+      "columns": [
+        "group",
+        "people",
+        "share_of_people",
+        "residents",
+        "share_of_residents",
+        "representation",
+        "under_represented",
+        "suppressed"
+      ],
+      "rows": [
+        {
+          "group": "Female",
+          "people": 188,
+          "share_of_people": 82.1,
+          "residents": 133781,
+          "share_of_residents": 50.1,
+          "representation": 1.64,
+          "under_represented": false,
+          "suppressed": false
+        },
+        {
+          "group": "Male",
+          "people": 41,
+          "share_of_people": 17.9,
+          "residents": 133233,
+          "share_of_residents": 49.9,
+          "representation": 0.36,
+          "under_represented": true,
+          "suppressed": false
+        }
+      ],
+      "detail": false,
+      "headings": {
+        "group": "Group",
+        "people": "Your people",
+        "share_of_people": "Share of your people",
+        "residents": "Residents",
+        "share_of_residents": "Share of residents",
+        "representation": "Your share divided by the residents' share",
+        "under_represented": "Under-represented",
+        "suppressed": "Hidden"
+      },
+      "units": {
+        "share_of_people": "percent",
+        "share_of_residents": "percent"
+      }
+    }
+  ],
+  "map": null,
+  "working": [
+    {
+      "title": "Loaded the census figures",
+      "detail": "Residents by sex in 318 local authorities in England and Wales. From TS008 - Sex (NM_2028_1). Fetched from Nomis.",
+      "rows_in": null,
+      "rows_out": null
+    },
+    {
+      "title": "Matched your labels to census groups",
+      "detail": "4 distinct labels. 0 were set in 'How your labels match census groups' and the rest were matched by their wording. 229 people were matched to a group and 11 were not, 0 of them with no label.",
+      "rows_in": 240,
+      "rows_out": 229
+    },
+    {
+      "title": "Set your people against residents",
+      "detail": "Area: Kingston upon Hull, City of. You gave the area. It had 267,014 residents in the census. For each group, its share of your people was divided by its share of residents. A group is under-represented when the result is below 0.8.",
+      "rows_in": null,
+      "rows_out": null
+    },
+    {
+      "title": "Hid small counts",
+      "detail": "Counts from 1 to 4 for a group were hidden, along with anything that would let them be worked out. 0 cells were hidden.",
+      "rows_in": null,
+      "rows_out": null
+    }
+  ],
+  "choices": [
+    {
+      "id": "characteristic",
+      "label": "What people are grouped by",
+      "value": "Sex",
+      "reason": "It is what you chose, or the usual choice if you chose nothing.",
+      "option": "characteristic"
+    },
+    {
+      "id": "groups",
+      "label": "Groups compared",
+      "value": [
+        "Female",
+        "Male"
+      ],
+      "reason": "These are the groups the 2021 Census publishes for every local authority. Your labels were matched to them by their wording, unless 'How your labels match census groups' set them.",
+      "option": "groups"
+    },
+    {
+      "id": "catchment",
+      "label": "Area you serve",
+      "value": "Kingston upon Hull, City of",
+      "reason": "You gave the area.",
+      "option": "catchment"
+    },
+    {
+      "id": "under_represented_below",
+      "label": "What counts as under-represented",
+      "value": 0.8,
+      "reason": "A share of your people below four fifths of the share of residents is a common first test of a gap.",
+      "option": "under_represented_below"
+    },
+    {
+      "id": "suppress_below",
+      "label": "Smallest count shown",
+      "value": 5,
+      "reason": "Smaller counts could point at individuals, so they are hidden.",
+      "option": "suppress_below"
+    }
+  ],
+  "checks": [
+    {
+      "id": "counts_are_people",
+      "question": "Does each count stand for people, with nobody counted twice?",
+      "why": "The counts are added up as they are."
+    },
+    {
+      "id": "labels_matched",
+      "question": "Were your labels matched to the right groups: Female, Male?",
+      "why": "Labels were matched by their wording, which can be wrong for codes and short forms. Compare the counts with your own, and set any label in 'How your labels match census groups'."
+    },
+    {
+      "id": "self_described",
+      "question": "Did people describe themselves?",
+      "why": "The census records what people said about themselves. A group recorded by staff may not match it."
+    },
+    {
+      "id": "catchment",
+      "question": "Is this the area you serve: Kingston upon Hull, City of?",
+      "why": "Your people are set against everyone who lives in this area. A different area has a different make-up."
+    },
+    {
+      "id": "period",
+      "question": "Does the data cover the period you are reporting on?",
+      "why": "The analysis cannot tell which dates the rows are from."
+    }
+  ],
+  "caveats": [
+    "A gap is not proof of a barrier. Groups differ in age and in need, so a service for older people, say, will not match all residents.",
+    "Residents are everyone counted in the area on census day, 21 March 2021, of every age. The make-up of some areas has changed since.",
+    "With few people, a gap between two shares can be chance.",
+    "The census recorded sex as female or male. People your data describes differently cannot be set against it and are left out."
+  ],
+  "warnings": [
+    "11 people have no label, or a label that matched no census group. They are left out of the shares. Use 'How your labels match census groups' to say which group a label belongs to."
+  ],
+  "sources": [
+    {
+      "id": "nomis-nm_2028_1",
+      "name": "TS008 - Sex (NM_2028_1)",
+      "publisher": "Office for National Statistics, through Nomis",
+      "url": "https://www.nomisweb.co.uk/api/v01/dataset/NM_2028_1.def.sdmx.json",
+      "licence": "Open Government Licence v3.0",
+      "edition": "Census 2021, taken on 21 March 2021",
+      "used_for": "Residents by sex, for comparison.",
+      "attribution": []
+    }
+  ],
+  "privacy": {
+    "suppress_below": 5,
+    "cells_suppressed": 0,
+    "row_level_output": false,
+    "sent_to_third_parties": [],
+    "notes": [
+      "A count is hidden when it is small and is about a group.",
+      "A hidden count is not always small. When only one count in a table is small, a second is hidden with it, so the first cannot be worked out from the total.",
+      "The result names census groups, never the labels in your data.",
+      "The number of people matched to no group is shown even when it is small, because it says nothing about which group they are in.",
+      "The census figures are public counts and are shown in full.",
+      "A second run with a different area gives a second set of counts. Publish one, because a small count can be worked out by taking one from the other."
+    ]
+  },
+  "charts": [
+    {
+      "id": "people_against_residents",
+      "title": "Your people and the residents of your area, by group",
+      "table": "by_group",
+      "category_column": "group",
+      "series": [
+        {
+          "column": "share_of_people",
+          "label": "Your people",
+          "unit": "percent"
+        },
+        {
+          "column": "share_of_residents",
+          "label": "Residents",
+          "unit": "percent"
+        }
+      ],
+      "kind": "bar",
+      "note": ""
+    }
+  ],
+  "answer": "Set against the people who live in the area you serve, you reach one group less than its share: Male. It is 41 of your people, 17.9%, against 49.9% of the people who live there.",
+  "key_figures": [
+    "groups_under_represented",
+    "people_matched",
+    "people_not_matched"
+  ],
+  "code": "# Version 0.1 of this analysis, run with\n# uk-open-data 0.2.0a1. This runs it again with\n# the same settings. No row or heading of your table is written\n# here: put the name of your own column beside each role.\nimport pandas as pd\n\nfrom uk_open_data.analyses import run_analysis\n\ndata = pd.read_csv(\"your-table.csv\")\nresult = run_analysis(\n    \"who-we-miss\",\n    data,\n    columns={\n        \"group\": \"\",  # the name of your column\n        \"count\": \"\",  # the name of your column\n    },\n    options={\n        \"suppress_below\": 5,\n        \"postcode_lookup\": \"auto\",\n        \"characteristic\": \"sex\",\n        \"catchment\": [\"E06000010\"],\n        \"catchment_min_share\": 0.05,\n        \"under_represented_below\": 0.8,\n    },\n)\nprint(result.answer)\nfor figure in result.figures:\n    print(figure.label, figure.value)"
+}

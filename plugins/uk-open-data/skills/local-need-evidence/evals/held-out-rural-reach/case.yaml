@@ -1,0 +1,14 @@
+# Held out: a test set. Never change the skill because this case fails (see AGENTS.md).
+# Input made on 23 November 2026 with uk-open-data 0.2.0a1 (KindTechUK/uk-open-data at 106b8e39, the same as main on that day), from invented counts for 379
+# North Yorkshire neighbourhoods (4,762 people), not committed:
+#   uk-open-data analysis run reach-deprivation counts.csv --column lsoa_code=... --column count=...
+#     --option catchment='["North Yorkshire"]' --json --summary
+schema_version: "1.1"
+name: held-out-rural-reach
+expected_outcome: |
+  About 150 words for a community foundation that open with the analysis's answer, set
+  7.2% of the people supported against 5.9% of residents in the 20% most deprived
+  neighbourhoods in England, decline the claim that the charity focuses on the most deprived
+  communities in North Yorkshire, and say that the reach rate counts residents of every age.
+context:
+  scaffold_script: place-files.sh

@@ -107,6 +107,13 @@ claude plugin eval . --scaffold --runs 3 --judge-model sonnet --no-publish
 
 Give each case that should load the skill a `tool_used` grader for the `Skill` tool with `arm: with-only`. It is not scored. It shows whether the skill loaded at all, which is the first thing to check when a case scores no better with the skill than without it.
 
+A case whose name starts with `held-out-` is a test set. It checks that the skill works on requests and results it was not written against, so the skill is never tuned to it:
+
+- Record its scores like any other case. Read its replies only to check that a grader is right.
+- Never change a skill because a held-out case failed. Find the same failure in a tuned case, or add one, and fix it there.
+- Once a held-out case's replies have been read closely, retire it and write a new one.
+- `--case 'held-out-*'` runs these cases on their own.
+
 Results are written to `evals/results/`, which is not committed. Copy the scores into `benchmark.json` by hand. Keys beyond the five the linter reads are welcome: the judge model, the cost, the score for each case and the runs on other models.
 
 ## Adding a skill
