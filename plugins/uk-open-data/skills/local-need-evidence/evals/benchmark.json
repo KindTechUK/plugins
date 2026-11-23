@@ -120,7 +120,8 @@
     "The entry under other_models is the small model's run of 18 November, on skill version 0.1.0 and six cases. The small model has not been run on 0.2.0.",
     "Six graders failed in every run with the skill: the opening-answer grader in four cases, the places-to-look-at graders of words-need-against-reach and words-provision-gap, the hidden-count grader of words-need-against-reach and the hidden-groups grader of words-who-we-miss. Some of the replies they failed look right on reading, so the graders are being checked before the skill is changed.",
     "cost_usd is what this run cost: the cases and the judge votes.",
-    "The rerun_2 entry scores the skill at 2ff1b4e. Three wording fixes made after it have not been run: the site-address check goes after the answer, a reply never says which hidden count protects the other, and a draft makes no promise or plan the person has not made."
+    "The rerun_2 entry scores the skill at 2ff1b4e. Three wording fixes made after it have not been run: the site-address check goes after the answer, a reply never says which hidden count protects the other, and a draft makes no promise or plan the person has not made.",
+    "After rerun_2, two graders were reworded and not re-run: the places-to-look-at grader of words-provision-gap now allows any figure the result holds, so it no longer fails a reply that opens with the answer, and that of words-need-against-reach no longer asks for Birmingham and Cardiff to be called the places of lowest reach, since their counts are hidden."
   ],
   "cost_usd": 18.63,
   "rerun": {
