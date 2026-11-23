@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: picks-the-analysis-and-the-door
+expected_outcome: |
+  The response keeps the spreadsheet out of the conversation, names the analysis that
+  answers the question, says what totals it needs and where a file can be run, and
+  quotes no figure about Leeds or Bradford from memory.

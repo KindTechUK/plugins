@@ -1,8 +1,8 @@
 schema_version: "1.1"
 name: writes-evidence-from-result
 expected_outcome: |
-  A short evidence-of-need section built only from the figures in the lens result,
-  with the source named, the catchment stated, the caveat that deprivation is about
-  neighbourhoods and not people, and the lens's checks left as questions for the person.
+  A short evidence-of-need section built only from the figures in the analysis result,
+  with the source named, the area compared stated, the caveat that deprivation is about
+  neighbourhoods and not people, and the analysis's checks left as questions for the person.
 context:
   scaffold_script: place-files.sh

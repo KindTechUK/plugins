@@ -1,0 +1,364 @@
+{
+  "analysis_id": "provision-gap",
+  "analysis_version": "0.2",
+  "package_version": "0.1.0",
+  "run_on": "2026-11-19",
+  "input_mode": "area_volumes",
+  "figures": [
+    {
+      "id": "volume_supplied",
+      "label": "Volume in the data you gave",
+      "value": 160,
+      "unit": "count",
+      "note": "",
+      "suppressed": false
+    },
+    {
+      "id": "volume_located",
+      "label": "Volume placed in a local authority in England or Wales",
+      "value": 160,
+      "unit": "count",
+      "note": "",
+      "suppressed": false
+    },
+    {
+      "id": "volume_in_catchment",
+      "label": "Volume in the area compared",
+      "value": 160,
+      "unit": "count",
+      "note": "The figures below are about this provision.",
+      "suppressed": false
+    },
+    {
+      "id": "areas_compared",
+      "label": "Local authorities compared",
+      "value": 16,
+      "unit": "areas",
+      "note": "",
+      "suppressed": false
+    },
+    {
+      "id": "areas_without_provision",
+      "label": "Local authorities where you provide nothing",
+      "value": 12,
+      "unit": "areas",
+      "note": "",
+      "suppressed": false
+    },
+    {
+      "id": "people_in_need",
+      "label": "People in need in the area compared: Residents of every age",
+      "value": 94620,
+      "unit": "people",
+      "note": "",
+      "suppressed": false
+    },
+    {
+      "id": "volume_per_1000_in_need",
+      "label": "Volume for each 1,000 people in need, across the area",
+      "value": 1.69,
+      "unit": "per_1000",
+      "note": "",
+      "suppressed": false
+    },
+    {
+      "id": "high_need_areas",
+      "label": "Local authorities with high need",
+      "value": 4,
+      "unit": "areas",
+      "note": "",
+      "suppressed": false
+    },
+    {
+      "id": "high_need_areas_without_provision",
+      "label": "High-need local authorities where you provide nothing",
+      "value": 2,
+      "unit": "areas",
+      "note": "",
+      "suppressed": false
+    },
+    {
+      "id": "share_of_provision_in_high_need_areas",
+      "label": "Share of your provision that is in high-need local authorities",
+      "value": 68.8,
+      "unit": "percent",
+      "note": "",
+      "suppressed": false
+    },
+    {
+      "id": "share_of_need_in_high_need_areas",
+      "label": "Share of people in need who live in those local authorities",
+      "value": 83.5,
+      "unit": "percent",
+      "note": "Compare this with the share of your provision.",
+      "suppressed": false
+    }
+  ],
+  "tables": [
+    {
+      "id": "priority_areas",
+      "title": "High need and thin provision: the places to look at first",
+      "columns": [
+        "rank",
+        "geography_code",
+        "geography_name",
+        "people_in_need",
+        "volume",
+        "volume_per_1000_in_need"
+      ],
+      "rows": [
+        {
+          "rank": 1,
+          "geography_code": "E08000025",
+          "geography_name": "Birmingham",
+          "people_in_need": 40000,
+          "volume": 0,
+          "volume_per_1000_in_need": 0.0
+        },
+        {
+          "rank": 2,
+          "geography_code": "W06000015",
+          "geography_name": "Cardiff",
+          "people_in_need": 10000,
+          "volume": 0,
+          "volume_per_1000_in_need": 0.0
+        },
+        {
+          "rank": 3,
+          "geography_code": "E08000003",
+          "geography_name": "Manchester",
+          "people_in_need": 20000,
+          "volume": 20,
+          "volume_per_1000_in_need": 1.0
+        },
+        {
+          "rank": 4,
+          "geography_code": "E09000023",
+          "geography_name": "Lewisham",
+          "people_in_need": 9000,
+          "volume": 90,
+          "volume_per_1000_in_need": 10.0
+        }
+      ],
+      "detail": false
+    },
+    {
+      "id": "by_local_authority",
+      "title": "Need and provision in every local authority compared",
+      "columns": [
+        "geography_code",
+        "geography_name",
+        "people_in_need",
+        "need_band",
+        "high_need",
+        "volume",
+        "volume_per_1000_in_need",
+        "provision_band"
+      ],
+      "rows": [],
+      "detail": true
+    }
+  ],
+  "map": {
+    "title": "Need and provision, by local authority",
+    "geography_type": "LAD",
+    "geography_year": 2023,
+    "table": "by_local_authority",
+    "code_column": "geography_code",
+    "layers": [
+      {
+        "id": "need",
+        "label": "People in need",
+        "value_column": "need_band",
+        "kind": "ordinal",
+        "note": "Local authorities in five equal groups by people in need.",
+        "categories": [
+          "Lowest fifth",
+          "Second fifth",
+          "Middle fifth",
+          "Fourth fifth",
+          "Highest fifth"
+        ],
+        "emphasis": "high"
+      },
+      {
+        "id": "provision",
+        "label": "Provision for each 1,000 people in need",
+        "value_column": "provision_band",
+        "kind": "ordinal",
+        "note": "Local authorities where you provide are in three equal groups. The lowest band holds places where you provide nothing.",
+        "categories": [
+          "None",
+          "Lower provision",
+          "Middle provision",
+          "Higher provision"
+        ],
+        "emphasis": "high"
+      }
+    ]
+  },
+  "working": [
+    {
+      "title": "Loaded the need figures",
+      "detail": "Residents of every age: 94,620 people in 16 local authorities in England and Wales. From TS008 - Sex (NM_2028_1). Fetched from Nomis.",
+      "rows_in": null,
+      "rows_out": null
+    },
+    {
+      "title": "Read the local authority volumes",
+      "detail": "4 rows holding a volume of 160. 0 rows had no local authority and were left out. 0 rows named a place the need figures do not list.",
+      "rows_in": 4,
+      "rows_out": 4
+    },
+    {
+      "title": "Joined provision to the need figures",
+      "detail": "A volume of 160 is in a local authority the need figures list. 0 is outside England and Wales, or in a local authority the figures do not list.",
+      "rows_in": null,
+      "rows_out": null
+    },
+    {
+      "title": "Set the area to compare",
+      "detail": "Area: England and Wales. No catchment was given, so every local authority in England and Wales is compared. A volume of 160 of the 160 placed is in it, in 4 of its 16 local authorities.",
+      "rows_in": null,
+      "rows_out": null
+    },
+    {
+      "title": "Set provision against need",
+      "detail": "For each local authority, the volume you provide was divided by the people in need and multiplied by 1,000. A local authority is high need when its count of people in need is in the top quarter of the area (at or above 9,000).",
+      "rows_in": null,
+      "rows_out": null
+    },
+    {
+      "title": "Listed the places with high need and thin provision",
+      "detail": "The 4 high-need local authorities were put in order of provision for each 1,000 people in need, lowest first, and then by need, highest first. The first 4 are listed.",
+      "rows_in": null,
+      "rows_out": null
+    }
+  ],
+  "choices": [
+    {
+      "id": "need",
+      "label": "People your provision is set against",
+      "value": "Residents of every age",
+      "reason": "The census counts every local authority, with nothing hidden.",
+      "option": "need"
+    },
+    {
+      "id": "high_need",
+      "label": "What counts as high need",
+      "value": "In the top quarter of the area compared, by people in need",
+      "reason": "A quarter keeps the list to the places that stand out.",
+      "option": null
+    },
+    {
+      "id": "catchment",
+      "label": "Area compared",
+      "value": "England and Wales",
+      "reason": "No catchment was given, so every local authority in England and Wales is compared.",
+      "option": "catchment"
+    },
+    {
+      "id": "top",
+      "label": "Places listed",
+      "value": 10,
+      "reason": "A short list is easier to act on.",
+      "option": "top"
+    }
+  ],
+  "checks": [
+    {
+      "id": "volume_is_provision",
+      "question": "Is the volume a count of what you provide, and not of people?",
+      "why": "This analysis shows every volume as it is. Counts of people belong in the need against reach analysis, which hides small counts."
+    },
+    {
+      "id": "everything_listed",
+      "question": "Does the data list everything you provide in the area?",
+      "why": "A site left out makes its local authority look like a gap."
+    },
+    {
+      "id": "period",
+      "question": "Does the data cover the period you are reporting on?",
+      "why": "The analysis cannot tell which dates the rows are from."
+    },
+    {
+      "id": "need_fits",
+      "question": "Are these the people you provide for: Residents of every age?",
+      "why": "Provision is only meaningful against the people it is for. Change the 'need' option if another measure fits better."
+    },
+    {
+      "id": "catchment",
+      "question": "Is this the area you could serve: England and Wales?",
+      "why": "A place you could never reach is not a gap. Name the area with the 'catchment' option."
+    }
+  ],
+  "caveats": [
+    "Thin provision is not the same as unmet need. Another organisation may already provide in a place where you provide little.",
+    "Provision is counted where a site is. People travel, so a site can serve the local authority next door.",
+    "Need is a count of people, so a large local authority is more likely to be listed as high need than a small one with the same rate.",
+    "The residents are everyone counted on census day, 21 March 2021, of every age. Not all of them need what you offer."
+  ],
+  "warnings": [],
+  "sources": [
+    {
+      "id": "nomis-nm_2028_1",
+      "name": "TS008 - Sex (NM_2028_1)",
+      "publisher": "Office for National Statistics, through Nomis",
+      "url": "https://www.nomisweb.co.uk/api/v01/dataset/NM_2028_1.def.sdmx.json",
+      "licence": "Open Government Licence v3.0",
+      "edition": "Census 2021, taken on 21 March 2021",
+      "used_for": "People in need: Residents of every age.",
+      "attribution": []
+    }
+  ],
+  "privacy": {
+    "suppress_below": null,
+    "cells_suppressed": 0,
+    "row_level_output": false,
+    "sent_to_third_parties": [],
+    "notes": [
+      "This analysis is about sites and what they provide, not about people, so it hides no count.",
+      "The result holds totals for local authorities. It names no site and repeats no postcode.",
+      "Where a local authority holds one site, the volume shown for it is that site's volume.",
+      "The need figures are public counts and are shown in full."
+    ]
+  },
+  "charts": [
+    {
+      "id": "need_in_priority_areas",
+      "title": "People in need in the places listed",
+      "table": "priority_areas",
+      "category_column": "geography_name",
+      "series": [
+        {
+          "column": "people_in_need",
+          "label": "People in need",
+          "unit": "people"
+        }
+      ],
+      "kind": "bar",
+      "note": ""
+    },
+    {
+      "id": "provision_in_priority_areas",
+      "title": "Provision for each 1,000 people in need in the places listed",
+      "table": "priority_areas",
+      "category_column": "geography_name",
+      "series": [
+        {
+          "column": "volume_per_1000_in_need",
+          "label": "Volume per 1,000 in need",
+          "unit": "per_1000"
+        }
+      ],
+      "kind": "bar",
+      "note": ""
+    }
+  ],
+  "answer": "83.5% of residents live in the 4 local authorities with the most residents, and 68.8% of your provision is there. The places to look at first, with the most residents and the thinnest provision, are Birmingham, Cardiff and Manchester.",
+  "key_figures": [
+    "share_of_provision_in_high_need_areas",
+    "share_of_need_in_high_need_areas",
+    "high_need_areas_without_provision"
+  ]
+}

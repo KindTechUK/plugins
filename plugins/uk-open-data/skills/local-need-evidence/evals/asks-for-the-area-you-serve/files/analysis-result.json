@@ -1,0 +1,352 @@
+{
+  "analysis_id": "need-reach",
+  "analysis_version": "0.2",
+  "package_version": "0.1.0",
+  "run_on": "2026-11-19",
+  "input_mode": "area_counts",
+  "figures": [
+    {
+      "id": "people_supplied",
+      "label": "People in the data you gave",
+      "value": 202,
+      "unit": "people",
+      "note": "",
+      "suppressed": false
+    },
+    {
+      "id": "people_located",
+      "label": "People placed in a local authority in England or Wales",
+      "value": 202,
+      "unit": "people",
+      "note": "",
+      "suppressed": false
+    },
+    {
+      "id": "people_in_catchment",
+      "label": "People who live in the area compared",
+      "value": 192,
+      "unit": "people",
+      "note": "The figures below are about these people.",
+      "suppressed": false
+    },
+    {
+      "id": "areas_compared",
+      "label": "Local authorities compared",
+      "value": 4,
+      "unit": "areas",
+      "note": "",
+      "suppressed": false
+    },
+    {
+      "id": "people_in_need",
+      "label": "People in need in the area compared: Unemployed people aged 16 to 64, not counting full-time students",
+      "value": 38000,
+      "unit": "people",
+      "note": "",
+      "suppressed": false
+    },
+    {
+      "id": "reach_per_100_in_need",
+      "label": "People you reached per 100 people in need, across the area",
+      "value": 0.51,
+      "unit": "per_100",
+      "note": "",
+      "suppressed": false
+    },
+    {
+      "id": "high_need_areas",
+      "label": "Local authorities with high need",
+      "value": 1,
+      "unit": "areas",
+      "note": "The top quarter of the places compared, by people in need.",
+      "suppressed": false
+    },
+    {
+      "id": "high_need_areas_without_people",
+      "label": "High-need local authorities where you reached nobody",
+      "value": 0,
+      "unit": "areas",
+      "note": "",
+      "suppressed": false
+    },
+    {
+      "id": "share_of_people_in_high_need_areas",
+      "label": "Share of your people who live in high-need local authorities",
+      "value": 20.8,
+      "unit": "percent",
+      "note": "",
+      "suppressed": false
+    },
+    {
+      "id": "share_of_need_in_high_need_areas",
+      "label": "Share of people in need who live in high-need local authorities",
+      "value": 52.6,
+      "unit": "percent",
+      "note": "The comparison for the share of your people.",
+      "suppressed": false
+    }
+  ],
+  "tables": [
+    {
+      "id": "priority_areas",
+      "title": "High need and low reach: the places to look at first",
+      "columns": [
+        "rank",
+        "geography_code",
+        "geography_name",
+        "people_in_need",
+        "people",
+        "people_per_100_in_need",
+        "suppressed"
+      ],
+      "rows": [
+        {
+          "rank": 1,
+          "geography_code": "E08000003",
+          "geography_name": "Manchester",
+          "people_in_need": 20000,
+          "people": 40,
+          "people_per_100_in_need": 0.2,
+          "suppressed": false
+        }
+      ],
+      "detail": false
+    },
+    {
+      "id": "by_local_authority",
+      "title": "Need and reach in every local authority compared",
+      "columns": [
+        "geography_code",
+        "geography_name",
+        "people_in_need",
+        "need_band",
+        "high_need",
+        "people",
+        "people_per_100_in_need",
+        "reach_band",
+        "suppressed"
+      ],
+      "rows": [],
+      "detail": true
+    }
+  ],
+  "map": {
+    "title": "Need and reach, by local authority",
+    "geography_type": "LAD",
+    "geography_year": 2023,
+    "table": "by_local_authority",
+    "code_column": "geography_code",
+    "layers": [
+      {
+        "id": "need",
+        "label": "People in need",
+        "value_column": "need_band",
+        "kind": "ordinal",
+        "note": "Local authorities in five equal groups by people in need.",
+        "categories": [
+          "Lowest fifth",
+          "Second fifth",
+          "Middle fifth",
+          "Fourth fifth",
+          "Highest fifth"
+        ],
+        "emphasis": "high"
+      },
+      {
+        "id": "reach",
+        "label": "People reached per 100 in need",
+        "value_column": "reach_band",
+        "kind": "ordinal",
+        "note": "Local authorities with a count that can be shown are in three equal groups. The lowest band holds places with nobody and places with a hidden count.",
+        "categories": [
+          "None, or count hidden",
+          "Lower reach",
+          "Middle reach",
+          "Higher reach"
+        ],
+        "emphasis": "high"
+      }
+    ]
+  },
+  "working": [
+    {
+      "title": "Loaded the need figures",
+      "detail": "Unemployed people aged 16 to 64, not counting full-time students: 94,620 people in 16 local authorities in England and Wales. From RM024 - Economic activity status by sex by age (NM_2124_1). Fetched from Nomis.",
+      "rows_in": null,
+      "rows_out": null
+    },
+    {
+      "title": "Read the local authority counts",
+      "detail": "5 rows holding 202 people. 0 rows had no local authority and were left out. 0 rows named a place the need figures do not list.",
+      "rows_in": 5,
+      "rows_out": 5
+    },
+    {
+      "title": "Joined people to the need figures",
+      "detail": "202 people live in a local authority the need figures list. 0 live outside England and Wales, or in a local authority the figures do not list.",
+      "rows_in": 202,
+      "rows_out": 202
+    },
+    {
+      "title": "Set the area to compare",
+      "detail": "Area: Lewisham, Greenwich, Manchester, Adur. Each of these local authorities holds at least 5% of the people located. 192 of the 202 people located live in it, in 4 of its 4 local authorities.",
+      "rows_in": 202,
+      "rows_out": 192
+    },
+    {
+      "title": "Set reach against need",
+      "detail": "For each local authority, the people you helped were divided by the people in need and multiplied by 100. A local authority is high need when its count of people in need is in the top quarter of the area (at or above 20,000).",
+      "rows_in": 192,
+      "rows_out": 192
+    },
+    {
+      "title": "Listed the places with high need and low reach",
+      "detail": "The 1 high-need local authorities were put in order of reach, lowest first, and then by need, highest first. The first 1 are listed. A hidden count is ranked as 4 people, the most a hidden small count can be.",
+      "rows_in": null,
+      "rows_out": null
+    },
+    {
+      "title": "Hid small counts",
+      "detail": "Counts from 1 to 4 for a named local authority were hidden, along with anything that would let them be worked out. 0 cells or figures were hidden.",
+      "rows_in": null,
+      "rows_out": null
+    }
+  ],
+  "choices": [
+    {
+      "id": "need",
+      "label": "Measure of need",
+      "value": "Unemployed people aged 16 to 64, not counting full-time students",
+      "reason": "The census counts every local authority, with nothing hidden.",
+      "option": "need"
+    },
+    {
+      "id": "high_need",
+      "label": "What counts as high need",
+      "value": "In the top quarter of the area compared, by people in need",
+      "reason": "A quarter keeps the list to the places that stand out. The Smart Works study, which this follows, used the top half.",
+      "option": null
+    },
+    {
+      "id": "catchment",
+      "label": "Area compared",
+      "value": "Lewisham, Greenwich, Manchester, Adur",
+      "reason": "Each of these local authorities holds at least 5% of the people located.",
+      "option": "catchment"
+    },
+    {
+      "id": "top",
+      "label": "Places listed",
+      "value": 10,
+      "reason": "A short list is easier to act on.",
+      "option": "top"
+    },
+    {
+      "id": "suppress_below",
+      "label": "Smallest count shown",
+      "value": 5,
+      "reason": "Smaller counts could point at individuals, so they are hidden.",
+      "option": "suppress_below"
+    }
+  ],
+  "checks": [
+    {
+      "id": "counts_are_people",
+      "question": "Does each count stand for people, with nobody counted twice?",
+      "why": "The counts are added up as they are."
+    },
+    {
+      "id": "home_location",
+      "question": "Is the location where each person lives?",
+      "why": "Need is counted where people live. A postcode for a service, school or hostel would put people in the wrong place."
+    },
+    {
+      "id": "period",
+      "question": "Does the data cover the period you are reporting on?",
+      "why": "The analysis cannot tell which dates the rows are from."
+    },
+    {
+      "id": "need_fits",
+      "question": "Is this the need you work on: Unemployed people aged 16 to 64, not counting full-time students?",
+      "why": "Reach is only meaningful against the people you are trying to help. Change the 'need' option if another measure fits better."
+    },
+    {
+      "id": "catchment",
+      "question": "Is this the area you could serve: Lewisham, Greenwich, Manchester, Adur?",
+      "why": "A place you could never reach is not a gap. Name the area with the 'catchment' option."
+    }
+  ],
+  "caveats": [
+    "Low reach is not the same as unmet need. Another organisation may already serve a place where you reach few people.",
+    "Need is a count of people, so a large local authority is more likely to be listed as high need than a small one with the same rate.",
+    "Reach sets the people you helped against everyone counted as in need. The people you helped may not all be in that group.",
+    "The need figures describe census day, 21 March 2021. Unemployment was affected by the pandemic then and has changed since. Full-time students who were looking for work are not counted."
+  ],
+  "warnings": [
+    "10 people live outside the catchment and are left out. Change the 'catchment' option to include them.",
+    "The area compared was worked out from where your people live, so it holds only places you already reach. To see places you do not reach, name the area you could serve with the 'catchment' option.",
+    "Only 4 local authorities are compared, so 'high need' says little. It means the top quarter, and at least one place."
+  ],
+  "sources": [
+    {
+      "id": "nomis-nm_2124_1",
+      "name": "RM024 - Economic activity status by sex by age (NM_2124_1)",
+      "publisher": "Office for National Statistics, through Nomis",
+      "url": "https://www.nomisweb.co.uk/api/v01/dataset/NM_2124_1.def.sdmx.json",
+      "licence": "Open Government Licence v3.0",
+      "edition": "Census 2021, taken on 21 March 2021",
+      "used_for": "People in need: Unemployed people aged 16 to 64, not counting full-time students.",
+      "attribution": []
+    }
+  ],
+  "privacy": {
+    "suppress_below": 5,
+    "cells_suppressed": 0,
+    "row_level_output": false,
+    "sent_to_third_parties": [],
+    "notes": [
+      "A count is hidden when it is small and is about a named local authority.",
+      "A hidden count is not always small. When only one count in a table is small, a second is hidden with it, so the first cannot be worked out from the total.",
+      "The map shows reach in bands, and the lowest band holds places with nobody and places with a hidden count.",
+      "The need figures are public counts and are shown in full."
+    ]
+  },
+  "charts": [
+    {
+      "id": "need_in_priority_areas",
+      "title": "People in need, in the places to look at first",
+      "table": "priority_areas",
+      "category_column": "geography_name",
+      "series": [
+        {
+          "column": "people_in_need",
+          "label": "People in need",
+          "unit": "people"
+        }
+      ],
+      "kind": "bar",
+      "note": ""
+    },
+    {
+      "id": "reach_in_priority_areas",
+      "title": "People you reached per 100 in need, in the same places",
+      "table": "priority_areas",
+      "category_column": "geography_name",
+      "series": [
+        {
+          "column": "people_per_100_in_need",
+          "label": "People reached per 100 in need",
+          "unit": "per_100"
+        }
+      ],
+      "kind": "bar",
+      "note": "No bar is drawn where a count is hidden."
+    }
+  ],
+  "answer": "52.6% of the people in need live in the one local authority with high need, and 20.8% of your people do. The place to look at first, with high need and your lowest reach, is Manchester.",
+  "key_figures": [
+    "share_of_people_in_high_need_areas",
+    "share_of_need_in_high_need_areas",
+    "high_need_areas_without_people"
+  ]
+}
