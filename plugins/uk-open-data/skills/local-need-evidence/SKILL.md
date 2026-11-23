@@ -12,7 +12,7 @@ metadata:
 
 # Evidence of local need and reach
 
-Funders, boards and trustees ask a charity about need and reach that its own records cannot answer alone. Five Kindtech Evidence analyses answer with published statistics, worked out in code. Your part: get the right analysis run through the right door, word what comes back without adding to it, and hand the person every judgement that is theirs to make.
+Five Kindtech Evidence analyses answer a charity's questions about need and reach with published statistics, worked out in code. Your part: get the right analysis run through the right door, word what comes back without adding to it, and hand the person every judgement that is theirs to make.
 
 ## Before you start
 
@@ -22,17 +22,16 @@ Work out these, asking one question at a time where one is not clear.
 
 - **A result already**: a file or text with `answer`, `figures`, `checks`, `caveats` and `sources`. Go to "Write the section".
 - **A place and no data of their own**: the area route.
-- **Totals**, such as clients for each council, people for each ethnic group or sessions for each council: "Run an analysis".
-- **A file on their computer** with one row per person or per site: "Run an analysis". The file stays where it is.
+- **Totals**, such as clients for each council or people for each ethnic group, or **a file on their computer** with one row per person or per site: "Run an analysis". The file stays where it is.
 - **Records about people in the conversation**, or an offer to paste them: "If records about people appear".
 
-**Which analysis answers the question.** [The five analyses](references/analyses.md) maps each question to its analysis, and says what it takes, what to lead with and what its figures cannot say. Read the part for the analysis in hand before you run it or word its result.
+**Which analysis answers the question.** [The five analyses](references/analyses.md) maps each question to its analysis, and says what it takes, what to lead with, what is particular to it and what its figures cannot say. Read the part for the analysis in hand before you run it or word its result.
 
 **The area you serve.** Every analysis compares the charity with an area. Ask which councils they could serve before a run, unless they have said. Left unnamed, the area is worked out from where the charity's people already live, so it holds only places they already reach and cannot show where they are missing.
 
-**How they want to work.** Give the quick answer: use the usual judgement calls and name them in a line, write the draft, hand over the checks, and offer in one line to show the steps behind any figure. When they ask to see the steps or how a figure was made, or to understand a result before using it, follow [show the steps](references/show-the-steps.md). A request to be taught the method gets the steps, with a line saying a fuller teaching mode is not part of this skill yet.
+**How they want to work.** By default, give the quick answer laid out under Output, and offer in one line to show the steps behind any figure. When they ask to see the steps or how a figure was made, to understand a result before using it, or to be taught the method, follow [show the steps](references/show-the-steps.md).
 
-**What the text is for**: which funder or meeting, which question, how many words. Ask if they have not said.
+**What the text is for**: which funder or meeting, which question, how many words. Ask if they have not said, and keep to what they set.
 
 ## Steps
 
@@ -41,58 +40,54 @@ Work out these, asking one question at a time where one is not clear.
 Every figure comes from a Kindtech tool's reply or from a result the person holds. When neither is here, say so first, in plain words: the Kindtech tools are not connected, so there are no figures yet. Then:
 
 - Name the analysis that answers their question and what to bring to it, or for a place, what the area route gives.
-- Offer a draft with a marked gap for each figure. Keep it to claims with a source: "one of the most deprived areas in England" needs one as much as a percentage does. Say that each gap is filled with a figure and its source beside it: name, publisher and edition.
+- Offer a draft with a marked gap for each figure and for each claim that needs a source: "one of the most deprived areas in England" needs one as much as a percentage does. Say that each gap is filled with a figure and its source beside it: name, publisher and edition.
 - Say how to get sourced figures: the doors in [running an analysis](references/running-an-analysis.md).
 
-Search the web for figures only when the person asks for that after hearing the above. Then use the publisher's own pages alone, such as the government's statistics pages for the English Indices of Deprivation. Put the edition and a link beside each figure, head them "Looked up on the web, not worked out by Kindtech Evidence", and tell the person to check each one against its page before it goes in the bid. A remembered figure, a news story or a summary page may be from an older edition or about a different area, and the funder will check.
+Search the web for figures only when the person asks for that after hearing this, and then follow [figures from the web](references/running-an-analysis.md#figures-from-the-web).
 
 ### The area route: is the place deprived?
 
-1. Call `describe_place` with a council name or code, a postcode district such as `SE6`, or a 2021 LSOA code. For a venue, use the first half of its postcode: the tool refuses a full postcode or a street address, because it cannot tell a venue from someone's home.
-2. On `choose`, ask the person which place. On `not_accepted`, ask them for the postcode district or the council. On `not_covered`, show its message: the tool covers England only, and the analyses that cover England and Wales still work for a place in Wales.
+Call `describe_place` with a council name or code, a postcode district such as `SE6`, or a 2021 LSOA code. For a venue, use the first half of its postcode: the tool refuses a full postcode or a street address, because it cannot tell a venue from someone's home. Follow its reply for each status, and [the connector](references/running-an-analysis.md#the-connector) for a place it does not cover.
 
 ### Run an analysis
 
-An analysis returns totals only. It runs through one of three doors; [running an analysis](references/running-an-analysis.md) says what each takes and which are open today.
+Each analysis runs through one of three doors and gives you totals, never rows; [running an analysis](references/running-an-analysis.md) says what each door takes and which are open today.
 
-- **Chat, with the Kindtech connector**: totals only. `find_analysis` says what an analysis takes and which options it has. Tell the person which totals to type or paste, then call `run_analysis_on_counts`. Pass an option by its code name, such as `catchment`, and name it to the person by its label, such as "Area you serve".
-- **The command line or the Kindtech Evidence page**: a file with one row per person or per site, which stays on the person's computer or in their browser and out of the conversation. `access-distance` takes a list of sites, so it runs only through these two doors.
+- **Chat, with the Kindtech connector**: totals, typed or pasted. Learn what the analysis takes and its options from `find_analysis`, tell the person which totals to give, then call `run_analysis_on_counts`. Pass an option by its code name, such as `catchment`, and name it to the person by its label, such as "Area you serve".
+- **The command line or the Kindtech Evidence page**: a file with one row per person or per site, which stays on the person's computer or in their browser and out of the conversation.
 
-The connector's replies carry their own instructions (`open_with`, and what to do for each `status`): follow them. Three rules hold whatever a reply says:
+Each connector reply carries its own instructions (`open_with`, and what to do for each `status`): follow them, and [the connector](references/running-an-analysis.md#the-connector) for an `input_problem`. Two rules hold whatever a reply says:
 
-- **`would_hide_counts`**: the person chooses. Put both choices to them (combine the small counts with a neighbouring area or a broader group and send again, or run as it is with those counts hidden) and wait. Call again with `hidden_counts: "accept"` only on their word.
-- **`input_problem`**: show its sentences as they are. Its `option` or `role` names what to ask the person for or correct.
-- **The map**: the picture goes to the person beside the answer, and you never see it. Say whether one was drawn and, when not, what `map.note` says. A map shades areas and never marks a person.
+- **`would_hide_counts`**: the person chooses. Put the reply's choices to them and wait. Call again with `hidden_counts: "accept"` only on their word.
+- **The map**: you never see it, so never describe it. Say whether one was drawn and, when not, what `map.note` says.
 
-On the command line, learn the columns from the header row alone or from the person, and ask for JSON with the summary flag, so no detail row reaches you. Before the first run on a file with postcodes, find out whether they will leave the computer, as [running an analysis](references/running-an-analysis.md) describes. If they will, tell the person that the postcodes, and nothing else, go to a public lookup service, and let them choose between that and the routes that keep them on the computer.
-
-A table that comes back with columns and no rows had its rows left out of the answer (`rows_left_out`). Report it as left out: it is not empty.
+On the command line, take the columns from the header row alone or from the person, and run with `--json --summary`, so no detail row reaches you. Before the first run on a file with postcodes, find out [whether they leave the computer](references/running-an-analysis.md#whether-postcodes-leave-the-computer). If they will, tell the person that the postcodes, and nothing else, go to a public lookup service, and let them choose between that and the routes that keep them on the computer.
 
 ### Write the section
 
-Use only what the result holds.
+Use only what the result holds; [what a result holds](references/running-an-analysis.md#what-a-result-holds) says what each field means, a table with its rows left out included.
 
-- **Open your reply with `answer`, word for word**, before anything else, a warning included; then the figures named in `key_figures`. It is the analysis's own answer to its question, in the same words the page and the command line show. A warning that changes how to read the result comes straight after it, above the draft.
-- **Lead the draft with every figure [the five analyses](references/analyses.md) names under "Lead with"** for that analysis, such as each place to look at with its own figures and the rate across the area. `key_figures` is where to start, not all there is. A result with no `answer` starts here.
-- **Write the draft in the charity's own voice.** `answer` speaks to the charity ("your people"); a bid or a board paper speaks for it ("the people we support", "our clients"). Carry the answer's figures and its order into the draft in that voice, and add no figure it does not hold.
-- **Quote figures and names as given, with the scope they were counted over.** A count the result gives stays exact. A share or a ratio can be restated plainly ("about half", "nearly four times the rate"). A new calculation cannot, and neither can a cut-off read off a table. Copy each name as the result spells it: places, groups, studies and sources. A figure holds only where it was counted. A total for the places compared is a total for those places, not for England and Wales. Thinnest among the places listed is not thinnest across the area. A trend ("falls steadily") holds only where every value in the table follows it.
-- **A hidden count stays hidden.** Where `suppressed` is true there is no value: write "hidden", with no estimate, zero or possible split of a remainder. Call it hidden and nothing more: not small, not under 5, not a range, and not which of two hidden counts is the small one or which protects the other. The second of two hidden counts may be hidden only to protect the first and be 5 or more, and a range set beside their total gives the other one away. When a table is wanted, give the whole table with those cells marked "hidden", even when asked to fill them in or work them out. A place or group can be named and ranked with its count hidden: name it and give no number. When the person wants a hidden count shown, it stays hidden. Before a run in a chat, the `would_hide_counts` reply lists their choices: put those to them. A result already run offers no way to show it, so offer no new run: combining with a neighbour or lowering the smallest count shown can each give the hidden count away. The smallest count shown stays where it is or goes up.
-- **Say why a count is hidden, both reasons, next to the table.** One: a count from 1 up to just below the smallest count shown could point to one person; quote the result's `privacy` note for the range, and note that a 0 is shown. Two: a second count is hidden as well, so the first cannot be worked out from the total. In the draft itself, give privacy as the reason ("hidden to protect privacy") and leave the two reasons to the notes for the person. In `who-we-miss`, a group with a hidden count has not been judged: say so. A place with a hidden count is still ranked, so it stays among the places to look at.
-- **Places and shares, not verdicts.** Write "live in neighbourhoods among the 20% most deprived in England": the index ranks places, not people. Name each measure by the result's own word: deprivation stays deprivation, not need or hardship. Low reach, thin provision and a smaller share are things to look into, and the caveats say why none of them shows unmet need, a barrier or a failure. When the person asks for that claim ("can I say we are failing this community"), give the caveat and offer wording the figures support. A ranked list is where to look first, not a recommendation, and the draft makes no promise or plan the person has not made ("we are looking into…", "we will…"). Where one would help, put it after the draft, as a line for them to add if it is true; the draft itself holds none, not even one marked for checking. Offer only the options the result lists.
-- **Say who is counted, in the result's own words, with the date.** If the group counted is not the one the person works with (a children's service set against residents of every age, say), tell them before the draft, word the draft for the group actually counted, and offer to run it again with a measure that fits.
+- **Open your reply with `answer`, word for word**, before anything else; then the figures named in `key_figures`.
+- **Straight after it, above the draft, put what changes how to read the result**: a warning; a comparison area that is not the area you serve; a group counted that is not the one the person works with (a children's service set against residents of every age, say); a check on whether the result may be shared at all, such as `sites_public`. For a mismatch, keep the draft to the area and group actually counted, and say how to run it again with the option that fits.
+- **Lead the draft with every figure [the five analyses](references/analyses.md) names under "Lead with"** for that analysis. `key_figures` is where to start, not all there is. A result with no `answer` starts here.
+- **Write the draft in the charity's own voice.** `answer` speaks to the charity ("your people"); the draft speaks for it ("the people we support", "our clients"), with the answer's figures in the answer's order.
+- **Use the result's own words.** Copy each name as the result spells it: places, groups, studies and sources. Name each measure by the result's word: deprivation stays deprivation, not need or hardship. Say who is counted, over which area, and when.
+- **Keep each figure to its scope.** A count stays exact. A share or a ratio can be restated plainly ("about half", "nearly four times the rate"); a new calculation or a cut-off read off a table cannot. A figure holds only where it was counted: a total for the places compared is not one for England and Wales, and thinnest among the places listed is not thinnest across the area. Read a trend off every row before you write it.
 - **Distance is a straight line.** Give distances as the result does and no travel time, even when asked: the analysis cannot see roads or public transport.
-- **Say which area the comparison covers**, from `choices`. If it is not the area the person serves, say so before anything else, keep the figures to the area they cover, and tell them how to run it again with the area they serve.
-- **Keep to the length and the question the funder set.**
+- **A hidden count stays hidden.** Where `suppressed` is true there is no value: write "hidden" and nothing more, with no estimate, zero, split, range or size ("small", "under 5"), and no word on which of two is the small one or which protects the other. Give the whole table with those cells marked "hidden", even when asked to fill them in or work them out. A place or group with a hidden count keeps its name and its rank, with no number. In a result already run it stays hidden: offer no new run to show it, since combining with a neighbour or lowering the smallest count shown can each give it away. The smallest count shown stays where it is or goes up.
+- **Next to the table, give both reasons a count is hidden**: a count from 1 up to just below the smallest count shown could point to one person (the result's `privacy` note gives the range, and a 0 is shown), and a second count is hidden so the first cannot be worked out from the total. In the draft itself the reason is privacy: "hidden to protect privacy". In `who-we-miss`, a group with a hidden count is not judged: say so.
+- **Places and shares, not verdicts.** Write "live in neighbourhoods among the 20% most deprived in England": the index ranks places, not people. Low reach, thin provision and a smaller share are where to look first, not a recommendation, and the caveats say why none of them shows unmet need, a barrier or a failure. When the person asks for that claim ("can I say we are failing this community"), give the caveat and offer wording the figures support.
+- **The draft holds only what the figures show.** A plan or promise the person has not made ("we are looking into…", "we will…") goes after the draft, as a line for them to add if it is true, never inside it, not even marked for checking.
 
 ### Hand over what only the person can settle
 
-After the draft, give these, briefly:
+After the draft, briefly, in the order under Output:
 
-- **Check before you use this.** Every item in `checks`, as the question it is, left for the person to answer even where the conversation seems to settle it. A check on whether the result may be shared at all, such as whether every site's address is public, goes above the draft.
-- **What the figures cannot say.** The `caveats`, and which one bites for this charity.
-- **Choices made for you.** Each entry in `choices` that names an `option`: what was chosen, why, and that the person can change it. An entry with no `option` is fixed in this version: list it apart, as part of the method. A value used because none was set, such as the distance that counts as within reach, is theirs to set: say so.
-- **About this run.** Any `warnings`, with their counts. What left the computer, from `privacy.sent_to_third_parties`.
 - **Sources.** For each entry in `sources`: name, publisher, edition, licence and link, and any `attribution` lines word for word, because they must appear wherever the figures are published.
+- **Check before you use this.** Every item in `checks`, as the question it is, left for the person to answer even where the conversation seems to settle it.
+- **What the figures cannot say.** The `caveats`, and which one bites for this charity.
+- **Choices made for you.** Each entry in `choices` that names an `option`: what was chosen, why, and that the person can change it; a value used because none was set is theirs to set. Offer only the options the result lists. List an entry with no `option` apart, as a fixed part of the method.
+- **About this run.** Any `warnings`, with their counts. What left the computer, from `privacy.sent_to_third_parties`.
 
 ### If records about people appear
 
@@ -114,19 +109,17 @@ For a quick answer, in this order, with plain headings:
 6. Choices made for you.
 7. About this run, when there is something to report.
 
-Keep items 3 to 7 short: a line or two each, in the result's own words where it has them. If there are no figures yet, give the draft with marked gaps and say what is needed to fill them.
-
-When showing the steps, give one stage in each reply and end it with a question for the person.
+Keep items 3 to 7 to a line or two each, in the result's own words where it has them. When showing the steps, follow [show the steps](references/show-the-steps.md) instead.
 
 ## Gotchas
 
-- Two cells hidden in one table: the second is hidden only to protect the first, so it can be 5 or more. Their total can be read off the table's total and is safe to state. How it splits is not, and listing the possible splits is a guess at each one. (Pilot run, 18 November 2026.)
-- Two counts hidden in one result were each called "very small" or "under 5", or one was named as the small one. Set beside the total of the two, which the reply also gave, that put the other between 19 and 22. (First run of version 0.2.0, 22 November 2026.)
-- "Our reach falls steadily as deprivation falls" stayed in a bid draft after the trend rule was added, and the reply's own check said the rates fall "at every step". In that result deciles 4 and 5 are level at 13.5 for each 1,000 residents, and decile 8 (7.0) is above decile 7 (5.5). Read the trend off every row before writing it. (Fourth re-run of version 0.2.0, 23 November 2026.)
+- Two counts hidden in one table: the second is hidden only to protect the first, so it can be 5 or more. Their total is safe to state; a list of possible splits guessed at each (pilot run, 18 November 2026). Calling both "very small" or "under 5", or naming the small one, beside that total put the other between 19 and 22 (first run of version 0.2.0, 22 November 2026).
 - A study named only in a `choices` reason, "Smart Works", came out as "Smith Works" or "Smash Works" in every `need-reach` reply, and a board draft said counts were hidden "because small counts are suppressed", which sizes both. (Third re-run of version 0.2.0, 23 November 2026.)
-- "Two rows came back blank, can you fill them in?" still calls for the finished table, with those rows marked hidden. An explanation alone leaves the person to build the table and decide what to put in the gaps. (Pilot run, 18 November 2026.)
-- A draft with gaps can still carry a remembered claim, such as how a place ranks or how many local authorities England has. It needs a source as much as a percentage does, and the person needs telling that each gap is filled with its source. (Full run, 18 November 2026.)
-- Where the assistant could search the web and no Kindtech tool was connected, it searched, and almost every source in the answer was a web page. The person took those figures to be the plugin's own. (First upload to an assistant with web search, 18 November 2026.)
+- "Our reach falls steadily as deprivation falls" stayed in a bid draft after the trend rule was added, and the reply's own check said the rates fall "at every step": deciles 4 and 5 were level at 13.5 for each 1,000 residents, and decile 8 (7.0) was above decile 7 (5.5). (Fourth re-run of version 0.2.0, 23 November 2026.)
+- Asked about hidden counts, replies offered to combine with a neighbour or lower the smallest count shown and run again. (Fourth re-run of version 0.2.0, 23 November 2026.)
+- "Two rows came back blank, can you fill them in?" got an explanation and no table, which left the person to fill the gaps. (Pilot run, 18 November 2026.)
+- A draft with gaps still carried remembered claims: how a place ranks, how many local authorities England has. (Full run, 18 November 2026.)
+- Where the assistant could search the web and no Kindtech tool was connected, it searched unasked, and almost every source in the answer was a web page. The person took those figures to be the plugin's own. (First upload to an assistant with web search, 18 November 2026.)
 
 ## Guardrails
 
@@ -137,4 +130,4 @@ When showing the steps, give one stage in each reply and end it with a question 
 
 ## Sources and freshness
 
-Every figure, source, caveat and check comes from the tool's reply or the result at the time it is run, so this file holds no statistics. What each analysis takes and is for is in [the five analyses](references/analyses.md). The doors, what is open today, the command and the tool names are in [running an analysis](references/running-an-analysis.md). Each carries the date it was last checked.
+Every figure, source, caveat and check comes from the tool's reply or the result at the time it is run, so this file holds no statistics. What changes, such as the analyses, the doors open today and the tool names, is in the two reference files above, each with the date it was last checked.

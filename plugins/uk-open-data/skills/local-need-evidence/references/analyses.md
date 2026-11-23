@@ -21,7 +21,7 @@ If a question fits two analyses, say what each would show and let the person pic
 ## What is the same in every result
 
 - `answer` is one or two sentences that answer the analysis's question, and `key_figures` names the figures to give next. The headline numbers are in `figures`, and the list a person will act on is usually the table `priority_areas`.
-- The judgement calls are in `choices`. An entry with an `option` can be changed and the analysis run again. An entry whose `option` is empty is fixed in this version: say what it is, as a fact of the method.
+- The judgement calls are in `choices`. An entry with an `option` can be changed and the analysis run again.
 - What counts as "high need", how the area was worked out when none was named, and what "within reach" means are all in `choices`. They change between versions, so read them from the result each time.
 
 ## `reach-deprivation`: reach against deprivation
@@ -62,5 +62,5 @@ If a question fits two analyses, say what each would show and let the person pic
 - **Inputs:** one row per site, as latitude and longitude or as a postcode (page or command line only). It takes no totals, so send the person to one of those doors and keep the site list out of the chat.
 - **Judgement calls:** the distance that counts as within reach (`within_km`; the result says what was used when none was set), who distance is measured for (`need`), the area you serve (`catchment`) and how many places to list (`top`).
 - **What is particular:** distance is in a straight line. The analysis has no road or public transport times, so give no travel time, even when asked, and say why. The `choices` entry on how distance is measured says where it is measured from: quote it.
-- **Straight after the answer:** the check `sites_public`. If any site's address is confidential, such as a refuge, the result should not be shared, because distances from several places can show roughly where a site is. Put this check after the answer and above the draft.
+- **Straight after the answer:** the check `sites_public`. If any site's address is confidential, such as a refuge, the result should not be shared, because distances from several places can show roughly where a site is.
 - **What bites:** the figures say how far people are from a site. They do not say how far the people the charity sees travel, or whether anyone far away needs it.
