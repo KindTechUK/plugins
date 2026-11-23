@@ -123,7 +123,7 @@
     "The rerun_2 entry scores the skill at 2ff1b4e. The rerun_3 entry scores it at f478efe (the site-address check after the answer, no word on which hidden count protects the other, no promise or plan the person has not made) on the graders as reworded in bce51be (the places-to-look-at graders of words-provision-gap and words-need-against-reach).",
     "The rerun_4 entry scores six wording fixes made after rerun_3, at ebc2fec: names copied as the result spells them, exact counts kept exact, figures and trends kept to where they hold, deprivation not called need, the hiding range quoted from the result with privacy alone as the reason in a draft, and combining offered only where the result or reply offers it.",
     "rerun_4 adds seven graders, so its scores are not comparable with the earlier re-runs: words-need-against-reach 08 (names as the result spells them), words-provision-gap 08 (thinnest only where it holds), words-who-we-miss 08 and 09 (no promise in the form text, two or three sentences) and writes-evidence-from-result 10, 11 and 12 (no claim the result does not hold, no promise in the section, about 200 words). On the graders the cases had before, the large model's judge failed one reply.",
-    "Three changes made after rerun_4 have not been run: a promise or plan goes after the draft, never in it; a hidden count in a result already run stays hidden, with no combining or lower smallest count offered; and a Gotcha on the \"falls steadily\" claim."
+    "The rerun_5 entry scores three changes made after rerun_4, at d579876: a promise or plan goes after the draft, never in it; a hidden count in a result already run stays hidden, with no combining or lower smallest count offered; and a Gotcha on the \"falls steadily\" claim. It uses the same graders as rerun_4, so the two are comparable."
   ],
   "cost_usd": 18.63,
   "rerun": {
@@ -212,6 +212,28 @@
         "words-provision-gap": 0.958,
         "words-who-we-miss": 0.926,
         "writes-evidence-from-result": 0.889
+      }
+    }
+  },
+  "rerun_5": {
+    "date": "2026-11-23",
+    "what": "The same five cases on the skill at d579876 (main at e17315a) and the graders of rerun_4, the skill only, three runs each, each reply judged again by the large model. The judges agree on 119 of 132 grader checks; in 12 of the 13 disagreements the run's judge failed a reply the large model passed. No draft held a promise or plan (three of six did in rerun_4), and no reply offered a new run to show a hidden count.",
+    "runs": 3,
+    "cost_usd": 8.32,
+    "with_skill": {
+      "judge_claude-sonnet-5-5": {
+        "words-distance-to-sites": 0.81,
+        "words-need-against-reach": 0.875,
+        "words-provision-gap": 0.792,
+        "words-who-we-miss": 0.852,
+        "writes-evidence-from-result": 0.944
+      },
+      "judge_claude-opus-5-5": {
+        "words-distance-to-sites": 0.905,
+        "words-need-against-reach": 0.958,
+        "words-provision-gap": 0.917,
+        "words-who-we-miss": 0.963,
+        "writes-evidence-from-result": 0.972
       }
     }
   }
