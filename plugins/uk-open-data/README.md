@@ -9,10 +9,30 @@ The skills here work in two ways. Where the assistant can run commands, they use
 `uk-open-data` command on your own computer. In a chat app, they use the Kindtech
 connector, which takes totals only.
 
-What you can get today, 20 November 2026: the skills, from this repository. The command
-is not released yet and the connector is not open to the public yet, so for now a skill
-words a result you already hold, tells you which totals to bring, and gives no figure of
-its own. This paragraph changes when they open.
+Installing the plugin in Claude Code also adds the Kindtech connector, at
+`https://app.kindte.ch/mcp`, so a skill can work out figures from totals in the chat. In
+another assistant, add that address as a connector yourself.
+
+## Privacy
+
+What leaves your computer depends on how a skill gets its figures.
+
+- **The Kindtech connector**, at `https://app.kindte.ch/mcp`, hosted on Azure in the UK
+  South region. It is given totals only: counts or volumes for each area or group. It refuses
+  a row about one person or one site, a full postcode and a street address. Every tool only
+  reads: nothing you send is changed or published. Its log records one line for each answer
+  it gives: which analysis ran, what kind of totals it was given, and that the answer was
+  given in a chat.
+- **Public services it asks.** To place a postcode district, the connector may ask
+  postcodes.io when it holds no postcode table of its own. To draw a map, it fetches public
+  area outlines from the ONS by area code. Each result says what was sent, under
+  `privacy.sent_to_third_parties`.
+- **The `uk-open-data` command** runs on your own computer. Postcodes in your file are sent
+  to postcodes.io, and nothing else from the file, unless a postcode table is installed
+  there. Before the first run, the skill tells you which will happen and lets you choose.
+
+The assistant you use sees the totals you give it and what comes back. Its own privacy
+terms apply to that.
 
 ## Install
 
